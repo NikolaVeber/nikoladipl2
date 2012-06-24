@@ -1,0 +1,165 @@
+/**
+ * 
+ */
+package gov.nasa.jpf.traceEmitter;
+
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.JPF;
+import gov.nasa.jpf.jvm.ElementInfo;
+import gov.nasa.jpf.jvm.JVM;
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.jvm.StackFrame;
+import gov.nasa.jpf.jvm.ThreadInfo;
+import gov.nasa.jpf.jvm.bytecode.InstanceInvocation;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+import gov.nasa.jpf.jvm.bytecode.ReturnInstruction;
+import gov.nasa.jpf.search.Search;
+import gov.nasa.jpf.traceServer.traceStorer.Event;
+import gov.nasa.jpf.traceServer.traceStorer.EventTypes.eventType;
+import gov.nasa.jpf.util.StringSetMatcher;
+
+/**
+ * Trace emitter used with
+ * <code>{@link gov.nasa.jpf.traceAnalyzer.MethodAnalyzer MethodAnalyzer}.
+ * 
+ * @author Igor Andjelkovic
+ * 
+ */
+public class MethodAnalyzerEmitter extends TraceEmitter {
+
+  public MethodAnalyzerEmitter(Config config, JPF jpf) {
+    super(config, jpf);
+    
+    for(eventType myEnum : eventType.values()) {
+        //Do stuff here!
+    	System.out.println(myEnum.ordinal() + " : " + myEnum);
+    }
+    
+  }
+  
+  StringSetMatcher includes = null; //  means all
+  StringSetMatcher excludes = null; //  means none
+  boolean isFirstTransition = true;
+  
+  public enum OpType { CALL (">  "),          // invokeX breaks transition (e.g. blocked sync)
+                EXECUTE (" - "),              // method entered method after transition break
+                CALL_EXECUTE (">- "),         // call & enter within same transition
+                RETURN ("  <"),               // method returned
+                EXEC_RETURN (" -<"),          // execute & return in consecutive ops
+                CALL_EXEC_RETURN (">-<");     // call & execute & return in consecutive ops
+    public String code;
+    OpType (String code){ this.code = code; }
+  };
+  
+  public void instructionExecuted(JVM vm) {
+    Instruction insn = vm.getLastInstruction();
+    ThreadInfo ti;
+    MethodInfo mi;
+    int eiIndex = -1;
+    int eiUniqueId = -1;
+    String eiClassName = null;
+    Event event = null;
+    ElementInfo ei = null;
+
+    if (!(skipInit && isFirstTransition)) {
+      if (insn instanceof InvokeInstruction) {
+        InvokeInstruction call = (InvokeInstruction) insn;
+        ti = vm.getLastThreadInfo();
+        mi = call.getInvokedMethod(ti);
+        System.out.println("event type: " + eventType.instructionExecuted + "   --  Value: " + eventType.instructionExecuted.ordinal());
+        event = createInstructionEvent(insn, mi, eventType.instructionExecuted);
+        if (isAnalyzedMethod(mi)) {
+          OpType type;
+
+          // check if this was actually executed, or is a blocked sync call
+          if (ti.getNextPC() == call) { // re-executed -> blocked or overlayed
+            type = OpType.CALL;
+          } else { // executed
+            if (ti.isFirstStepInsn()) {
+              type = OpType.EXECUTE;
+            } else {
+              type = OpType.CALL_EXECUTE;
+            }
+          }
+
+          if (call instanceof InstanceInvocation) {
+            ei = ((InstanceInvocation) call).getThisElementInfo(ti); 
+            eiIndex = ei.getObjectRef();
+            eiUniqueId = ei.getClassInfo().getUniqueId();
+            eiClassName = ei.getClassInfo().getName();
+          }
+          event = addInstructionProperties(event, ti, type, eiIndex,
+              eiUniqueId, eiClassName, mi, ti.getStackDepth());
+          event = addArgs(event, call, ti);
+          traceFilter.processEvent(event, eventType.instructionExecuted);
+        }
+      } else if (insn instanceof ReturnInstruction) {
+        ReturnInstruction ret = (ReturnInstruction) insn;
+        ti = vm.getLastThreadInfo();
+        StackFrame frame = ret.getReturnFrame();
+        mi = frame.getMethodInfo();
+
+        event = createInstructionEvent(insn, mi, eventType.instructionExecuted);
+
+        if (isAnalyzedMethod(mi)) {
+          if (!mi.isStatic()) {
+            int ref = frame.getThis();
+            if (ref != -1) {
+              ei = ti.getElementInfo(ref);
+              eiIndex = ei.getObjectRef();
+              eiUniqueId = ei.getClassInfo().getUniqueId();
+              eiClassName = ei.getClassInfo().getName();
+            }
+          }
+          event = addInstructionProperties(event, ti, OpType.RETURN,
+              eiIndex, eiUniqueId, eiClassName, mi, ti.getStackDepth() + 1); // postExec->frame already popped
+          traceFilter.processEvent(event, eventType.instructionExecuted);
+        }
+      }
+    }
+  }
+  
+  // add method arguments to the trace by using TRACE_EXTRA_DATA property
+  private Event addArgs(Event event, InvokeInstruction insn, ThreadInfo ti) {
+  	Object args[] = insn.getArgumentValues(ti);
+  	StringBuilder sb = new StringBuilder();
+  	for(Object arg : args) {
+  		sb.append(arg + "; ");
+  	}
+  	if(sb.length() == 0) {
+  		event.addProperty(PropertyCollection.TRACE_EXTRA_DATA, "noArgs");
+  	} else {
+  		event.addProperty(PropertyCollection.TRACE_EXTRA_DATA, sb.toString());
+  	}
+  	return event;
+  }
+  
+  private Event addInstructionProperties(Event event, ThreadInfo ti, OpType type, int eiIndex,
+      int eiUniqueId, String eiClassName, MethodInfo mi, int stackDepth) {
+    
+    event.addProperty(PropertyCollection.THREAD_ID, ti.getId());
+    event.addProperty(PropertyCollection.THREAD_NAME, ti.getName());
+    if (mi.getClassInfo() != null) {
+      event.addProperty(PropertyCollection.CLASS_UNIQUE_ID, mi.getClassInfo().getUniqueId());
+    }
+    event.addProperty(PropertyCollection.EI_INDEX, eiIndex);
+    event.addProperty(PropertyCollection.EI_UNIQUE_ID, eiUniqueId);
+    event.addProperty(PropertyCollection.METHOD_IS_STATIC, mi.isStatic());
+    event.addProperty(PropertyCollection.STACK_DEPTH, stackDepth);
+    event.addProperty(PropertyCollection.METHOD_CALL_TYPE, type.ordinal());
+    event.addProperty(PropertyCollection.EI_CLASS_NAME, eiClassName);
+    return event;
+  }
+  
+  private boolean isAnalyzedMethod (MethodInfo mi){
+    String mthName = mi.getFullName();
+    return StringSetMatcher.isMatch(mthName, includes, excludes);
+  }
+   
+  protected Event augmentStateAdvanced(Search search) {
+    isFirstTransition = false;
+    return super.augmentStateAdvanced(search);
+  }
+  
+}

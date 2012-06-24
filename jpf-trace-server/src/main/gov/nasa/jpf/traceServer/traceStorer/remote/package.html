@@ -1,0 +1,19 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceServer.traceStorer.remote package</title>
+</head>
+<body>
+Provides classes for sending JPF events over the network to be stored on a remote server.
+<p>
+Defines {@link gov.nasa.jpf.traceServer.traceStorer.remote.RemoteTraceStorer}
+class that represents trace storer implementation.
+It is a client, in a client-server configuration, that sends event data to a remote server. 
+{@link gov.nasa.jpf.traceServer.traceStorer.DefaultEvent} is used as the implementation of event interface
+on the client side. Server that receives events from a client needs to store them by using the "local" trace storer.
+Either in-memory or neo4j trace storer implementation can be used.
+</p>
+
+</body>
+</html>

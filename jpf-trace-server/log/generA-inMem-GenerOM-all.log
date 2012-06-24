@@ -1,0 +1,43 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+Starting Heuristic Search 
+
+====================================================== gov.nasa.jpf.traceAnalyzer.GenericOutputMethodAnalyzer
+
+Print events with all their properties.
+ false                  0                      0                      true                   25                     gov.nasa.jpf.jvm.cho  
+ false                  0                      1                      true                   25                     gov.nasa.jpf.jvm.cho  
+ false                  0                      java/lang/Thread.jav   3                      0                      75                     java.lang.Thread       3                      FirstTask              main                   nativereturn           start()V               325                    38                    
+ false                  0                      oldclassic.java:54     3                      0                      78                     java.lang.Thread       2                      SecondTask             main                   noArgs                 invokevirtual          start()V               346                    38                    
+ false                  0                      3                      true                   25                     gov.nasa.jpf.jvm.cho  
+ false                  0                      java/lang/Thread.jav   3                      0                      78                     java.lang.Thread       3                      SecondTask             main                   nativereturn           start()V               346                    38                    
+ true                   0                      oldclassic.java:55     2                      0                      -1                     oldclassic             3                      null                   main                   return                 main([Ljava/lang/Str   -1                     50                    
+ false                  2                      9                      true                   25                     gov.nasa.jpf.jvm.cho  
+ false                  2                      [synthetic] [run]      2                      0                      78                     SecondTask             2                      SecondTask             Thread-2               noArgs                 invokevirtual          run()V                 346                    78                    
+ false                  2                      oldclassic.java:126    3                      0                      58                     gov.nasa.jpf.Console   2                      gov.nasa.jpf.Console   Thread-2               java.lang.String@200   invokevirtual          println(Ljava/lang/S   211                    58                    
+ false                  2                      gov/nasa/jpf/Console   3                      0                      58                     gov.nasa.jpf.Console   3                      gov.nasa.jpf.Console   Thread-2               nativereturn           println(Ljava/lang/S   211                    58                    
+ false                  2                      oldclassic.java:127    3                      0                      74                     Event                  2                      Event                  Thread-2               noArgs                 invokevirtual          signal_event()V        320                    74                    
+ false                  2                      oldclassic.java:74     4                      0                      74                     java.lang.Object       2                      Event                  Thread-2               noArgs                 invokevirtual          notifyAll()V           320                    0                     
+ false                  2                      java/lang/Object.jav   4                      0                      74                     java.lang.Object       3                      Event                  Thread-2               nativereturn           notifyAll()V           320                    0                     
+ false                  2                      oldclassic.java:75     3                      0                      74                     Event                  3                      Event                  Thread-2               return                 signal_event()V        320                    74                    
+ false                  2                      oldclassic.java:130    3                      0                      74                     Event                  2                      Event                  Thread-2               noArgs                 invokevirtual          wait_for_event()V      321                    74                    
+ false                  2                      oldclassic.java:79     4                      0                      74                     java.lang.Object       2                      Event                  Thread-2               noArgs                 invokevirtual          wait()V                321                    0                     
+ true                   1                      22                     true                   25                     gov.nasa.jpf.jvm.cho  
+ false                  1                      [synthetic] [run]      2                      0                      75                     FirstTask              2                      FirstTask              Thread-1               noArgs                 invokevirtual          run()V                 325                    75                    
+ false                  1                      oldclassic.java:100    3                      0                      58                     gov.nasa.jpf.Console   2                      gov.nasa.jpf.Console   Thread-1               java.lang.String@100   invokevirtual          println(Ljava/lang/S   211                    58                    
+ false                  1                      gov/nasa/jpf/Console   3                      0                      58                     gov.nasa.jpf.Console   3                      gov.nasa.jpf.Console   Thread-1               nativereturn           println(Ljava/lang/S   211                    58                    
+ false                  1                      oldclassic.java:103    3                      0                      74                     Event                  2                      Event                  Thread-1               noArgs                 invokevirtual          wait_for_event()V      320                    74                    
+ false                  1                      oldclassic.java:79     4                      0                      74                     java.lang.Object       2                      Event                  Thread-1               noArgs                 invokevirtual          wait()V                320                    0                     

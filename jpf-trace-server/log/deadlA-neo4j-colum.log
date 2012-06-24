@@ -1,0 +1,35 @@
+   1       2       0     trans      insn          loc
+------- ------- ------- ---------------------------------------------------
+W:320      |       |        22      invokevirtual oldclassic.java:79
+U:320      |       |        22      invokevirtual oldclassic.java:79
+L:320      |       |        22      invokevirtual oldclassic.java:103
+   |    W:321      |         9      invokevirtual oldclassic.java:79
+   |    U:321      |         9      invokevirtual oldclassic.java:79
+   |    L:321      |         9      invokevirtual oldclassic.java:130
+   |    U:320      |         9             return oldclassic.java:75
+   |    A:320      |         9      invokevirtual oldclassic.java:74
+   |    L:320      |         9      invokevirtual oldclassic.java:127
+   |       |       T         3   directcallreturn [synthetic] [main]
+   |       |    U:0          3   directcallreturn [synthetic] [main]
+   |       |    A:0          3   directcallreturn [synthetic] [main]
+   |       |    L:0          3   directcallreturn [synthetic] [main]
+   |       S       |         1      invokevirtual oldclassic.java:54
+   S       |       |         0      invokevirtual oldclassic.java:53
+   |       |    L:326        0       invokeclinit [synthetic] [clinit]
+   |       |    L:313        0       invokeclinit [synthetic] [clinit]
+   |       |    L:310        0       invokeclinit [synthetic] [clinit]
+   |       |    L:222        0       invokeclinit [synthetic] [clinit]
+   |       |    L:219        0       invokeclinit [synthetic] [clinit]
+   |       |    L:158        0       invokeclinit [synthetic] [clinit]
+   |       |    L:134        0       invokeclinit [synthetic] [clinit]
+   |       |    L:116        0       invokeclinit [synthetic] [clinit]
+   |       |    L:110        0       invokeclinit [synthetic] [clinit]
+   |       |    L:107        0       invokeclinit [synthetic] [clinit]
+   |       |    L:104        0       invokeclinit [synthetic] [clinit]
+   |       |    L:101        0       invokeclinit [synthetic] [clinit]
+   |       |    L:98         0       invokeclinit [synthetic] [clinit]
+   |       |    U:92         0       nativereturn java.lang.Character.<clinit>()V
+   |       |    L:92         0       invokeclinit [synthetic] [clinit]
+   |       |    L:89         0       invokeclinit [synthetic] [clinit]
+   |       |    L:29         0       invokeclinit [synthetic] [clinit]
+   |       |    L:11         0       invokeclinit [synthetic] [clinit]

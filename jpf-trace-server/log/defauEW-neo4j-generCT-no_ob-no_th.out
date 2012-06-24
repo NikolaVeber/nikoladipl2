@@ -1,0 +1,1526 @@
+1
+  2
+  2
+1
+
+====================================================== output #1
+  2
+1
+====================================================== stateId: 0
+instructionExecuted
+  oldclassic.java:47            
+    oldclassic.main([Ljava/lang/String;)V
+      new Event@140
+instructionExecuted
+  oldclassic.java:47            
+    oldclassic.main([Ljava/lang/String;)V
+      dup
+instructionExecuted
+  oldclassic.java:47            
+    oldclassic.main([Ljava/lang/String;)V
+      invokespecial Event.<init>()V
+instructionExecuted
+  oldclassic.java:59            
+    Event.<init>()V
+      aload_0
+instructionExecuted
+  oldclassic.java:59            
+    Event.<init>()V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      aload_0
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      iconst_0
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      putfield
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      return  Event.<init>()V
+instructionExecuted
+  oldclassic.java:47            
+    oldclassic.main([Ljava/lang/String;)V
+      astore_1
+instructionExecuted
+  oldclassic.java:48            
+    oldclassic.main([Ljava/lang/String;)V
+      new Event@141
+instructionExecuted
+  oldclassic.java:48            
+    oldclassic.main([Ljava/lang/String;)V
+      dup
+instructionExecuted
+  oldclassic.java:48            
+    oldclassic.main([Ljava/lang/String;)V
+      invokespecial Event.<init>()V
+instructionExecuted
+  oldclassic.java:59            
+    Event.<init>()V
+      aload_0
+instructionExecuted
+  oldclassic.java:59            
+    Event.<init>()V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      aload_0
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      iconst_0
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      putfield
+instructionExecuted
+  oldclassic.java:60            
+    Event.<init>()V
+      return  Event.<init>()V
+instructionExecuted
+  oldclassic.java:48            
+    oldclassic.main([Ljava/lang/String;)V
+      astore_2
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      new FirstTask@145
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      dup
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      aload_1
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      aload_2
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      invokespecial FirstTask.<init>(LEvent;LEvent;)V
+instructionExecuted
+  oldclassic.java:91            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:91            
+    FirstTask.<init>(LEvent;LEvent;)V
+      invokespecial java.lang.Thread.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      lconst_0
+instructionExecuted
+    java.lang.Thread.<init>()V
+      invokespecial java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokestatic java.lang.Thread.currentThread()Ljava/lang/Thread;
+instructionExecuted
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      executenative JPF_java_lang_Thread.currentThread____Ljava_lang_Thread_2
+instructionExecuted
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      nativereturn java.lang.Thread.currentThread()Ljava/lang/Thread;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      astore 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_1
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      aload_0
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      getfield
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      areturn java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      astore_2
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      monitorenter
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      arraylength
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aastore
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iconst_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iadd
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      putfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iconst_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      isub
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      putfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_2
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      monitorexit
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      return  java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_3
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.StringBuilder
+instructionExecuted
+  [synthetic] [clinit]          
+    [clinit]
+      invokestatic java.lang.AbstractStringBuilder.<clinit>()V
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      newarray int[10]
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_0
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_1
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_2
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      sipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_3
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      sipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_4
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iconst_5
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      dup
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      ldc
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      iastore
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      putstatic
+instructionExecuted
+    java.lang.AbstractStringBuilder.<clinit>()V
+      return  java.lang.AbstractStringBuilder.<clinit>()V
+instructionExecuted
+  [synthetic] [clinit]          
+    [clinit]
+      directcallreturn
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.StringBuilder@14d
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.StringBuilder.<init>()V
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      bipush
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      invokespecial java.lang.AbstractStringBuilder.<init>(I)V
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      iload_1
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      newarray char[16]
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      putfield
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      return  java.lang.AbstractStringBuilder.<init>(I)V
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      return  java.lang.StringBuilder.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      ldc
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__Ljava_lang_String_2__Ljava_lang_StringBuilder_2
+instructionExecuted
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      nativereturn java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getstatic
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      iconst_1
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      iadd
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putstatic
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__I__Ljava_lang_StringBuilder_2
+instructionExecuted
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      nativereturn java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.toString()Ljava/lang/String;
+instructionExecuted
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      executenative JPF_java_lang_StringBuilder.toString____Ljava_lang_String_2
+instructionExecuted
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      nativereturn java.lang.StringBuilder.toString()Ljava/lang/String;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.Thread$Permit@156
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.Thread$Permit.<init>()V
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      iconst_1
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      putfield
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      return  java.lang.Thread$Permit.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.getPriority()I
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      aload_0
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      getfield
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      ireturn java.lang.Thread.getPriority()I
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.isDaemon()Z
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      aload_0
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      getfield
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      ireturn java.lang.Thread.isDaemon()Z
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_2
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_2
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      lload 4
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      executenative JPF_java_lang_Thread.init0__Ljava_lang_ThreadGroup_2Ljava_lang_Runnable_2Ljava_lang_String_2J__V
+instructionExecuted
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      nativereturn java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      return  java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>()V
+      return  java.lang.Thread.<init>()V
+instructionExecuted
+  oldclassic.java:89            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:89            
+    FirstTask.<init>(LEvent;LEvent;)V
+      iconst_0
+instructionExecuted
+  oldclassic.java:89            
+    FirstTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:92            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:92            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_1
+instructionExecuted
+  oldclassic.java:92            
+    FirstTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:93            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:93            
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_2
+instructionExecuted
+  oldclassic.java:93            
+    FirstTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:94            
+    FirstTask.<init>(LEvent;LEvent;)V
+      return  FirstTask.<init>(LEvent;LEvent;)V
+instructionExecuted
+  oldclassic.java:50            
+    oldclassic.main([Ljava/lang/String;)V
+      astore_3
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      new SecondTask@15a
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      dup
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      aload_1
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      aload_2
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      invokespecial SecondTask.<init>(LEvent;LEvent;)V
+instructionExecuted
+  oldclassic.java:117           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:117           
+    SecondTask.<init>(LEvent;LEvent;)V
+      invokespecial java.lang.Thread.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      aconst_null
+instructionExecuted
+    java.lang.Thread.<init>()V
+      lconst_0
+instructionExecuted
+    java.lang.Thread.<init>()V
+      invokespecial java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokestatic java.lang.Thread.currentThread()Ljava/lang/Thread;
+instructionExecuted
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      executenative JPF_java_lang_Thread.currentThread____Ljava_lang_Thread_2
+instructionExecuted
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      nativereturn java.lang.Thread.currentThread()Ljava/lang/Thread;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      astore 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_1
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      aload_0
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      getfield
+instructionExecuted
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      areturn java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      astore_2
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      monitorenter
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      arraylength
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aastore
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iconst_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iadd
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      putfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      dup
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      getfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      iconst_1
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      isub
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      putfield
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_2
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      monitorexit
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      
+instructionExecuted
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      return  java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_3
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.StringBuilder@15b
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.StringBuilder.<init>()V
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      bipush
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      invokespecial java.lang.AbstractStringBuilder.<init>(I)V
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      iload_1
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      newarray char[16]
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      putfield
+instructionExecuted
+    java.lang.AbstractStringBuilder.<init>(I)V
+      return  java.lang.AbstractStringBuilder.<init>(I)V
+instructionExecuted
+    java.lang.StringBuilder.<init>()V
+      return  java.lang.StringBuilder.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      ldc
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__Ljava_lang_String_2__Ljava_lang_StringBuilder_2
+instructionExecuted
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      nativereturn java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getstatic
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      iconst_1
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      iadd
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putstatic
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__I__Ljava_lang_StringBuilder_2
+instructionExecuted
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      nativereturn java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.toString()Ljava/lang/String;
+instructionExecuted
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      executenative JPF_java_lang_StringBuilder.toString____Ljava_lang_String_2
+instructionExecuted
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      nativereturn java.lang.StringBuilder.toString()Ljava/lang/String;
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.Thread$Permit@15f
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      dup
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokespecial java.lang.Thread$Permit.<init>()V
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      invokespecial java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      iconst_1
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      putfield
+instructionExecuted
+    java.lang.Thread$Permit.<init>()V
+      return  java.lang.Thread$Permit.<init>()V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.getPriority()I
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      aload_0
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      getfield
+instructionExecuted
+    java.lang.Thread.getPriority()I
+      ireturn java.lang.Thread.getPriority()I
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload 6
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.isDaemon()Z
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      aload_0
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      getfield
+instructionExecuted
+    java.lang.Thread.isDaemon()Z
+      ireturn java.lang.Thread.isDaemon()Z
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_2
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_2
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getfield
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      lload 4
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      executenative JPF_java_lang_Thread.init0__Ljava_lang_ThreadGroup_2Ljava_lang_Runnable_2Ljava_lang_String_2J__V
+instructionExecuted
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      nativereturn java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      return  java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+instructionExecuted
+    java.lang.Thread.<init>()V
+      return  java.lang.Thread.<init>()V
+instructionExecuted
+  oldclassic.java:115           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:115           
+    SecondTask.<init>(LEvent;LEvent;)V
+      iconst_0
+instructionExecuted
+  oldclassic.java:115           
+    SecondTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:118           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:118           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_1
+instructionExecuted
+  oldclassic.java:118           
+    SecondTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:119           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+instructionExecuted
+  oldclassic.java:119           
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_2
+instructionExecuted
+  oldclassic.java:119           
+    SecondTask.<init>(LEvent;LEvent;)V
+      putfield
+instructionExecuted
+  oldclassic.java:120           
+    SecondTask.<init>(LEvent;LEvent;)V
+      return  SecondTask.<init>(LEvent;LEvent;)V
+instructionExecuted
+  oldclassic.java:51            
+    oldclassic.main([Ljava/lang/String;)V
+      astore 4
+instructionExecuted
+  oldclassic.java:53            
+    oldclassic.main([Ljava/lang/String;)V
+      aload_3
+instructionExecuted
+  oldclassic.java:53            
+    oldclassic.main([Ljava/lang/String;)V
+      invokevirtual FirstTask.start()V
+instructionExecuted
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+====================================================== stateId: 1
+instructionExecuted
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+instructionExecuted
+    java.lang.Thread.start()V
+      nativereturn java.lang.Thread.start()V
+instructionExecuted
+  oldclassic.java:54            
+    oldclassic.main([Ljava/lang/String;)V
+      aload 4
+instructionExecuted
+  oldclassic.java:54            
+    oldclassic.main([Ljava/lang/String;)V
+      invokevirtual SecondTask.start()V
+instructionExecuted
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+====================================================== stateId: 3
+instructionExecuted
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+instructionExecuted
+    java.lang.Thread.start()V
+      nativereturn java.lang.Thread.start()V
+instructionExecuted
+  oldclassic.java:55            
+    oldclassic.main([Ljava/lang/String;)V
+      return  oldclassic.main([Ljava/lang/String;)V
+instructionExecuted
+  [synthetic] [main]            
+    [main]
+      directcallreturn
+====================================================== stateId: 8
+instructionExecuted
+  [synthetic] [run]             
+    [run]
+      runstart
+instructionExecuted
+  [synthetic] [run]             
+    [run]
+      invokevirtual SecondTask.run()V
+instructionExecuted
+  oldclassic.java:123           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:123           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:123           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:123           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:123           
+    SecondTask.run()V
+      putfield
+instructionExecuted
+  oldclassic.java:126           
+    SecondTask.run()V
+      getstatic
+instructionExecuted
+  oldclassic.java:126           
+    SecondTask.run()V
+      ldc
+instructionExecuted
+  oldclassic.java:126           
+    SecondTask.run()V
+      invokevirtual java.io.PrintStream.println(Ljava/lang/String;)V
+instructionExecuted
+  gov/nasa/jpf/ConsoleOutputStream.java:-1
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      executenative JPF_gov_nasa_jpf_ConsoleOutputStream.println__Ljava_lang_String_2__V
+instructionExecuted
+  gov/nasa/jpf/ConsoleOutputStream.java:-1
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      nativereturn gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+instructionExecuted
+  oldclassic.java:127           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:127           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:127           
+    SecondTask.run()V
+      invokevirtual Event.signal_event()V
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      aload_0
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      aload_0
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      getfield
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      iconst_1
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      iadd
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      iconst_3
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      irem
+instructionExecuted
+  oldclassic.java:71            
+    Event.signal_event()V
+      putfield
+instructionExecuted
+  oldclassic.java:74            
+    Event.signal_event()V
+      aload_0
+instructionExecuted
+  oldclassic.java:74            
+    Event.signal_event()V
+      invokevirtual java.lang.Object.notifyAll()V
+instructionExecuted
+    java.lang.Object.notifyAll()V
+      executenative JPF_java_lang_Object.notifyAll____V
+instructionExecuted
+    java.lang.Object.notifyAll()V
+      nativereturn java.lang.Object.notifyAll()V
+instructionExecuted
+  oldclassic.java:75            
+    Event.signal_event()V
+      return  Event.signal_event()V
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:129           
+    SecondTask.run()V
+      
+instructionExecuted
+  oldclassic.java:130           
+    SecondTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:130           
+    SecondTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:130           
+    SecondTask.run()V
+      invokevirtual Event.wait_for_event()V
+instructionExecuted
+  oldclassic.java:79            
+    Event.wait_for_event()V
+      aload_0
+instructionExecuted
+  oldclassic.java:79            
+    Event.wait_for_event()V
+      invokevirtual java.lang.Object.wait()V
+instructionExecuted
+    java.lang.Object.wait()V
+      executenative JPF_java_lang_Object.wait____V
+====================================================== stateId: 16
+instructionExecuted
+  [synthetic] [run]             
+    [run]
+      runstart
+instructionExecuted
+  [synthetic] [run]             
+    [run]
+      invokevirtual FirstTask.run()V
+instructionExecuted
+  oldclassic.java:97            
+    FirstTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:97            
+    FirstTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:97            
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:97            
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:97            
+    FirstTask.run()V
+      putfield
+instructionExecuted
+  oldclassic.java:100           
+    FirstTask.run()V
+      getstatic
+instructionExecuted
+  oldclassic.java:100           
+    FirstTask.run()V
+      ldc
+instructionExecuted
+  oldclassic.java:100           
+    FirstTask.run()V
+      invokevirtual java.io.PrintStream.println(Ljava/lang/String;)V
+instructionExecuted
+  gov/nasa/jpf/ConsoleOutputStream.java:-1
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      executenative JPF_gov_nasa_jpf_ConsoleOutputStream.println__Ljava_lang_String_2__V
+instructionExecuted
+  gov/nasa/jpf/ConsoleOutputStream.java:-1
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      nativereturn gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:102           
+    FirstTask.run()V
+      
+instructionExecuted
+  oldclassic.java:103           
+    FirstTask.run()V
+      aload_0
+instructionExecuted
+  oldclassic.java:103           
+    FirstTask.run()V
+      getfield
+instructionExecuted
+  oldclassic.java:103           
+    FirstTask.run()V
+      invokevirtual Event.wait_for_event()V
+instructionExecuted
+  oldclassic.java:79            
+    Event.wait_for_event()V
+      aload_0
+instructionExecuted
+  oldclassic.java:79            
+    Event.wait_for_event()V
+      invokevirtual java.lang.Object.wait()V
+instructionExecuted
+    java.lang.Object.wait()V
+      executenative JPF_java_lang_Object.wait____V

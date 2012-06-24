@@ -1,0 +1,30 @@
+# project config for jpf-trace-server extension
+
+jpf-trace-server = ${config_path}
+
+#
+jpf-trace-server.native_classpath=\
+  ${jpf-trace-server}/build/jpf-trace-server.jar;\
+  ${jpf-trace-server}/build/jpf-trace-server-with-shell.jar;\
+  ${jpf-trace-server}/build/jpf-trace-server-scala.jar;\
+  ${jpf-trace-server}/lib/scala-library.jar;\
+  ${jpf-trace-server}/lib/neo4j-kernel-1.0.jar;\
+  ${jpf-trace-server}/lib/geronimo-jta_1.1_spec-1.1.1.jar
+
+jpf-trace-server.classpath=\
+  ${jpf-trace-server}/build/examples
+
+jpf-trace-server.sourcepath=\
+  ${jpf-trace-server}/src/examples  
+
+# turn on the Shell
+#shell=.shell.basicshell.BasicShell
+
+# specify trace report panel class 
+shell.panels.traceServer.report=gov.nasa.jpf.traceReporter.TraceReportPanel
+# add trace report panel
+shell.panels.traceAnalyzer=gov.nasa.jpf.traceReporter.TraceAnalyzerPanel
+shell.panels+=,traceServer.report,traceAnalyzer
+
+shell.commands.analyze = gov.nasa.jpf.traceReporter.AnalyzeCommand
+shell.commands+=,analyze

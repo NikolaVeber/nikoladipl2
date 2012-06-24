@@ -1,0 +1,87 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+
+====================================================== error #1
+gov.nasa.jpf.jvm.NotDeadlockedProperty
+deadlock encountered:
+  thread FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,lockCount:1,suspendCount:0}
+  thread SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,lockCount:1,suspendCount:0}
+
+
+====================================================== snapshot #1
+thread FirstTask:{id:1,name:Thread-1,status:WAITING,priority:5,lockCount:1,suspendCount:0}
+  waiting on: Event@140
+  call stack:
+	at java.lang.Object.wait(Object.java:-1)
+	at Event.wait_for_event(oldclassic.java:79)
+	at FirstTask.run(oldclassic.java:103)
+
+thread SecondTask:{id:2,name:Thread-2,status:WAITING,priority:5,lockCount:1,suspendCount:0}
+  waiting on: Event@141
+  call stack:
+	at java.lang.Object.wait(Object.java:-1)
+	at Event.wait_for_event(oldclassic.java:79)
+	at SecondTask.run(oldclassic.java:130)
+
+Starting Heuristic Search 
+
+====================================================== gov.nasa.jpf.traceAnalyzer.DeadlockAnalyzer
+
+Print collumn
+   1       2       0     trans      insn          loc
+------- ------- ------- ---------------------------------------------------
+W:320      |       |        22      invokevirtual oldclassic.java:79
+U:320      |       |        22      invokevirtual oldclassic.java:79
+L:320      |       |        22      invokevirtual oldclassic.java:103
+   |    W:321      |         9      invokevirtual oldclassic.java:79
+   |    U:321      |         9      invokevirtual oldclassic.java:79
+   |    L:321      |         9      invokevirtual oldclassic.java:130
+   |    U:320      |         9             return oldclassic.java:75
+   |    A:320      |         9      invokevirtual oldclassic.java:74
+   |    L:320      |         9      invokevirtual oldclassic.java:127
+   |       |       T         3   directcallreturn [synthetic] [main]
+   |       |    U:0          3   directcallreturn [synthetic] [main]
+   |       |    A:0          3   directcallreturn [synthetic] [main]
+   |       |    L:0          3   directcallreturn [synthetic] [main]
+   |       S       |         1      invokevirtual oldclassic.java:54
+   S       |       |         0      invokevirtual oldclassic.java:53
+   |       |    L:326        0       invokeclinit [synthetic] [clinit]
+   |       |    L:313        0       invokeclinit [synthetic] [clinit]
+   |       |    L:310        0       invokeclinit [synthetic] [clinit]
+   |       |    L:222        0       invokeclinit [synthetic] [clinit]
+   |       |    L:219        0       invokeclinit [synthetic] [clinit]
+   |       |    L:158        0       invokeclinit [synthetic] [clinit]
+   |       |    L:134        0       invokeclinit [synthetic] [clinit]
+   |       |    L:116        0       invokeclinit [synthetic] [clinit]
+   |       |    L:110        0       invokeclinit [synthetic] [clinit]
+   |       |    L:107        0       invokeclinit [synthetic] [clinit]
+   |       |    L:104        0       invokeclinit [synthetic] [clinit]
+   |       |    L:101        0       invokeclinit [synthetic] [clinit]
+   |       |    L:98         0       invokeclinit [synthetic] [clinit]
+   |       |    U:92         0       nativereturn java.lang.Character.<clinit>()V
+   |       |    L:92         0       invokeclinit [synthetic] [clinit]
+   |       |    L:89         0       invokeclinit [synthetic] [clinit]
+   |       |    L:29         0       invokeclinit [synthetic] [clinit]
+   |       |    L:11         0       invokeclinit [synthetic] [clinit]
+
+Print essential
+   1       2     trans      insn          loc
+------- ------- ---------------------------------------------------
+W:320      |        22      invokevirtual oldclassic.java:79
+   |    W:321        9      invokevirtual oldclassic.java:79
+   |    A:320        9      invokevirtual oldclassic.java:74
+   |       S         1      invokevirtual oldclassic.java:54
+   S       |         0      invokevirtual oldclassic.java:53

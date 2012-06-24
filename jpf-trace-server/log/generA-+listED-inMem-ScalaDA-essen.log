@@ -1,0 +1,28 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+Starting Heuristic Search 
+
+====================================================== gov.nasa.jpf.traceAnalyzer.ScalaDeadlockAnalyzer
+====================================================== stateId: 22
+ objectWait             320                    LEvent;               
+====================================================== stateId: 9
+ objectWait             321                    LEvent;               
+ objectNotifyAll        320                    LEvent;               
+====================================================== stateId: 3
+====================================================== stateId: 1
+ threadStarted          2                      Thread-2              
+====================================================== stateId: 0
+ threadStarted          1                      Thread-1              

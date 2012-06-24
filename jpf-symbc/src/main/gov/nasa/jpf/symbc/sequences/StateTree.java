@@ -1,0 +1,320 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.JPF;
+import gov.nasa.jpf.PropertyListenerAdapter;
+import gov.nasa.jpf.jvm.ClassInfo;
+import gov.nasa.jpf.jvm.JVM;
+import gov.nasa.jpf.jvm.SystemState;
+import gov.nasa.jpf.jvm.ThreadInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+import gov.nasa.jpf.report.ConsolePublisher;
+import gov.nasa.jpf.report.Publisher;
+import gov.nasa.jpf.report.PublisherExtension;
+import gov.nasa.jpf.search.Search;
+import gov.nasa.jpf.symbc.sequences.CoverageAnalyzer.ClassCoverage;
+import gov.nasa.jpf.symbc.sequences.CoverageAnalyzer.Coverage;
+import gov.nasa.jpf.util.Misc;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+import java.util.Vector;
+
+public class StateTree  extends PropertyListenerAdapter implements PublisherExtension {
+	
+	private HashMap<Integer, State> id2state = new HashMap<Integer, State> ();
+	private Config conf;
+	private JPF jpf;
+	private CoverageAnalyzer totalCoverage;
+	private Vector<Path> paths = new Vector<Path> ();
+	private State currentState;
+	private State rootState;
+	private Vector<Instr> instBuffer = new Vector<Instr>();
+	private CoverageManager cm = new CoverageManager();
+	
+	public StateTree(Config conf, JPF jpf){
+		
+		this.conf = conf; 
+		this.jpf = jpf;
+		totalCoverage = new CoverageAnalyzer(conf, jpf);
+		jpf.addPublisherExtension(ConsolePublisher.class, this);
+	}
+	
+
+	public Path getNextBestCoverage(){
+		Path bestPath = null;
+		int addedCoverage = 0;
+		 
+		for(Path p : paths){
+			if(!p.isVisited){
+				HashSet<Block> blocks = new HashSet<Block> ();
+				for(State s : p.states){  // find a unique set of unvisited blocks this path would cover
+					if(!s.isVisited){
+						for(Instr i : s.instructions){
+							if(!i.inst.getMethodInfo().isNative() && i.block != null && !i.block.isCovered){
+								blocks.add(i.block);
+							}
+						}
+					}
+				}
+				if(blocks.size() > addedCoverage){
+					bestPath = p;
+					addedCoverage = blocks.size();
+				}
+			}
+		}
+		bestPath.isVisited = true;
+		return bestPath;
+	}
+	
+	
+  public void stateAdvanced(Search search) {
+		  System.out.println("State advanced, state: " + search.getStateId());
+		  if(search.isNewState()){ // the state has not yet been reached, adding coverage
+			  State s = new State(currentState, search.getStateId());
+			  currentState = s;
+			  id2state.put(new Integer(currentState.id), currentState);
+			  for(Instr i : instBuffer){
+				  currentState.addInstruction(i);
+			  }
+			  instBuffer.clear();
+		  }
+  }
+  public void searchFinished(Search search) {
+	  System.out.println("END");
+	  printTree(rootState);
+	  printPaths(paths);
+
+  }
+  
+    private void replayPaths(Vector<Path> paths) {
+    	System.out.println("Replaying Paths...");
+    	CoverageAnalyzer totalCoverage = new CoverageAnalyzer(conf, jpf);
+    	
+    	for(int j = 0; j < paths.size(); j++){ // repeat until all paths considered
+    		Path path = getNextBestCoverage();
+    		CoverageAnalyzer ca = new CoverageAnalyzer(conf, jpf);
+	    	// set classes as loaded
+	    	for(ClassInfo ci : loadedClasses){
+	    		totalCoverage.classLoaded(ci);
+	    		ca.classLoaded(ci);
+	    		
+	    	}
+	    	// replay instructions for each state 
+			for(State s: path.states){
+				for(Instr i : s.instructions){
+					totalCoverage.instructionExecuted(i.inst, i.threadId);
+					ca.instructionExecuted(i.inst, i.threadId);
+					cm.instructionExecuted(i.inst, path);
+				}
+			}
+			printPath(path);
+			//ca.publishFinished(publisher);
+			//printClassCoverages(ca, totalCoverage);
+			
+    	}
+    	
+    	
+    /**	for (Path path : paths){ // calculate coverage for each class
+    		CoverageAnalyzer ca = new CoverageAnalyzer(conf, jpf);
+	    	// set classes as loaded
+	    	for(ClassInfo ci : loadedClasses){
+	    		totalCoverage.classLoaded(ci);
+	    		ca.classLoaded(ci);
+	    		
+	    	}
+	    	// replay instructions for each state 
+			for(State s: path.states){
+				for(Instr i : s.instructions){
+					totalCoverage.instructionExecuted(i.inst, i.threadId);
+					ca.instructionExecuted(i.inst, i.threadId);
+					cm.instructionExecuted(i.inst, path);
+				}
+			}
+			printPath(path);
+			//ca.publishFinished(publisher);
+			//printClassCoverages(ca, totalCoverage);
+			
+
+    	}**/
+    }
+    
+
+	public void searchStarted(Search search) {
+		  System.out.println("search started, state: " + search.getStateId() + " end state: " + search.isEndState());
+		  currentState = new State(search.getStateId());
+		  rootState = currentState;
+		  id2state.put(new Integer(currentState.id), currentState);
+	  }
+ 
+	public void stateBacktracked(Search search) {
+		System.out.println("State backtracked, state: " + search.getStateId());
+		State s = id2state.get(new Integer( search.getStateId()));
+		currentState = s;		
+	}
+	
+	public void instructionExecuted(JVM vm) {
+			if (!vm.getSystemState().isIgnored()) {
+				Instruction insn = vm.getLastInstruction();
+				instBuffer.add(new Instr(insn, vm.getLastThreadInfo().getId()));
+				
+				// insn.getMethodInfo().getClassInfo()
+				//totalCoverage.instructionExecuted(insn, vm.getLastThreadInfo().getId());
+			}
+	}
+	
+	public void printTree(State root){
+		printTree(root, 0, root.instructions.size());
+	}
+	
+	private Path getPath(State endState){
+		Path path = new Path ();
+		return addToPath(endState, path);
+	}
+	
+	private Path addToPath(State state, Path path){
+		if(state.isRoot)
+			return path;
+		else{
+			path.states.add(state);
+			return addToPath(state.parent, path);
+		}
+			
+	}
+	
+	
+	private void printPaths(Vector<Path> paths){
+		for(Path path : paths){
+			printPath(path);
+		}
+	}
+	
+	private void printPath(Path path){
+			System.out.println("------------------");
+			System.out.println("Path: ");
+						
+			for(State s: path.states){
+				System.out.print(s.id + " -> ");
+			}
+			System.out.println(".");
+	}
+	
+	
+	private void printTree(State root, int depth, int totalInst){
+		totalInst += root.instructions.size();
+		for (int i = 0; i<depth; i++){
+			System.out.print(" ");
+		}
+		System.out.println(" - " + root.id + ", number of instructions: " + root.instructions.size() + " total instructions: " + totalInst);
+		
+		for(State s : root.children){
+			printTree(s, depth + 1, totalInst);
+		}
+		
+		if(root.children.isEmpty()){ // keine weitere states, get coverage
+			Path path = getPath(root);
+			Collections.reverse(path.states);
+			paths.add(path);
+		}
+		
+	}
+	
+	private Vector<ClassInfo> loadedClasses = new Vector<ClassInfo>();
+	
+	public void classLoaded(JVM vm) {
+		//totalCoverage.classLoaded(vm);
+		cm.addClass(vm.getLastClassInfo());
+		loadedClasses.add(vm.getLastClassInfo());  // all loaded classes are saved here, so that we know the total code for which we should calculate coverage
+	}
+	
+	 public void publishFinished(Publisher publisher) {
+		 System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+		 //coverageAnalyzer.publishFinished(publisher);
+		 replayPaths(paths);
+		 
+		 //printPaths(paths);
+		 
+		 cm.printClasses();
+		 
+	 }
+	 
+	 private void printClassCoverages(CoverageAnalyzer ca, CoverageAnalyzer totalCoverage) {
+		 ArrayList<Map.Entry<String, ClassCoverage>> clsEntries = null;
+		 if (clsEntries == null) {
+		      clsEntries = Misc.createSortedEntryList(ca.classes, new Comparator<Map.Entry<String, ClassCoverage>>() {
+
+		        public int compare(Map.Entry<String, ClassCoverage> o1,
+		                Map.Entry<String, ClassCoverage> o2) {
+		          return o2.getKey().compareTo(o1.getKey());
+		        }
+		      });
+		    }
+
+	
+	      String space = "  ";
+	      Coverage clsCoverage = new Coverage(0, 0);
+	      Coverage mthCoverage = new Coverage(0, 0);
+	      Coverage bbCoverage = new Coverage(0, 0);
+	      Coverage lineCoverage = new Coverage(0, 0);
+	      Coverage insnCoverage = new Coverage(0, 0);
+	      Coverage branchCoverage = new Coverage(0, 0);
+
+	      
+	      System.out.println();
+	      System.out.println("!!!!!--------------------------------------- class coverage ------------------------------------------------");
+	      System.out.println("bytecode            line                basic-block         branch              methods             location");
+	      System.out.println("------------------------------------------------------------------------------------------------------------");
+
+	      // Write Body
+	      for (Map.Entry<String, ClassCoverage> e : clsEntries) {
+	       if(e.getKey().contains("TestPaths2")) { // dummy filter, later to be used with the classes of interest
+		    	  ClassCoverage cc = e.getValue();
+		        ClassCoverage ccTotal = totalCoverage.classes.get(e.getKey());
+	
+		        printCoverage(cc.getCoveredInsnDiff(ccTotal));
+		        System.out.print(space);
+	
+		        printCoverage(cc.getCoveredLines());
+		        System.out.print(space);
+	
+		        printCoverage(cc.getCoveredBasicBlocks());
+		        System.out.print(space);
+	
+		        printCoverage(cc.getCoveredBranches());
+		        System.out.print(space);
+	
+		        printCoverage(cc.getCoveredMethods());
+		        System.out.print(space);
+	
+		        System.out.println(e.getKey());
+	       }
+	      }
+
+	      System.out.println();
+	      System.out.println("------------------------------------------------------------------------------------------------------------");
+
+
+	    }
+
+	    void printCoverage (Coverage cov){
+	        int nTotal = cov.total();
+	        int nCovered = cov.covered();
+
+	        String s;
+	        if (nTotal <= 0) {
+	          s = " -  ";
+	        } else {
+	          s = String.format("%.2f (%d/%d)", ((double) nCovered / nTotal), nCovered, nTotal);
+	        }
+	        System.out.print(String.format("%1$-18s", s));
+	      }
+	    
+	    
+	 
+}

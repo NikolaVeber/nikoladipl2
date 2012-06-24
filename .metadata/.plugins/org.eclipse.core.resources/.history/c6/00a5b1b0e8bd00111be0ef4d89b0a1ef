@@ -1,0 +1,127 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import java.util.BitSet;
+import java.util.HashMap;
+import java.util.Vector;
+
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.jvm.bytecode.GOTO;
+import gov.nasa.jpf.jvm.bytecode.IfInstruction;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+
+public class MethodCov {
+	public MethodInfo mi;
+	public Instruction[] instructions;
+	public Instr[] instrs;
+	public HashMap<Integer, Instr> notExecutedInstructions = new HashMap<Integer, Instr>();
+	public Vector<Block> coveredBlocks = new Vector<Block>();
+	public Vector<Block> unCoveredBlocks = new Vector<Block>();
+	
+
+	public MethodCov(MethodInfo mi) {
+		this.mi = mi;
+		instructions = mi.getInstructions();
+		instrs = new Instr[instructions.length];
+
+		for (int i = 0; i < instructions.length; i++) {
+			instrs[i] = new Instr(instructions[i]);
+			notExecutedInstructions.put(new Integer(i), instrs[i]);
+		}
+		getBlockLeaders(mi);
+	}
+
+	private void getBlockLeaders(MethodInfo mi) {
+		BitSet bb = new BitSet(instructions.length); // block leaders will be
+														// set to TRUE
+
+		// handle the block structure
+		// The first instruction of the method and instruction of every handler
+		// for the method are leaders.
+		// Each instruction that is the target of an unconditional branch (goto,
+		// goto_w, jsr, jsr_w, and ret) is a leader
+		// Each instruction that is the target of a conditional branch
+		// (ifeq, iflt, ifle, ifne, ifgt, ifge, ifnull, ifnonnull, if_icmpeq,
+		// if_icmpne,if_icmplt, if_icmpgt, if_icmple, if_icmpge, if_acmpeq,
+		// if_acmpne, lcmp, fcmpl, fcmpg, dcmpl, dcmpg)
+		// is a leader.
+		// Each instruction that is one of the target of a compound conditional
+		// branch (tableswitch or lookupswitch) is a leader.
+		// Each instruction that immediately follows a conditional or
+		// unconditional branch, or a <T>return (ireturn, lreturn, freturn,
+		// dreturn, areturn, and return),
+		// or a compound conditional branch instruction is a leader.
+		// Each individual leader give rise to a basic block, consisting of all
+		// instructions up to the next leader or the end of the bytecode.
+
+		bb.set(0); // first instruction is the leader
+		for (int i = 0; i < instructions.length; i++) {
+			Instruction insn = instructions[i];
+			if (insn instanceof IfInstruction) {
+				IfInstruction ifInsn = (IfInstruction) insn;
+				Instruction tgt = ifInsn.getTarget();
+				bb.set(tgt.getInstructionIndex());
+				tgt = ifInsn.getNext();
+				bb.set(tgt.getInstructionIndex());
+			} else if (insn instanceof GOTO) {
+				Instruction tgt = ((GOTO) insn).getTarget();
+				bb.set(tgt.getInstructionIndex());
+			} else if (insn instanceof InvokeInstruction) {
+				// hmm, this might be a bit too conservative, but who says we
+				// don't jump out of a caller into a handler, or even that we
+				// ever return from the call?
+				Instruction tgt = insn.getNext();
+				bb.set(tgt.getInstructionIndex());
+			}
+		}
+		Block lastBlock = null;
+		for (int i = 0; i < instructions.length; i++) {
+			if(bb.get(i)){ // instruction is marked as a leader, assign the block 
+				lastBlock = new Block(i);
+				unCoveredBlocks.add(lastBlock);
+			}
+			instrs[i].block = lastBlock; // assign the block to the instruction
+		}
+
+	}
+
+	public void instructionExecuted(Instruction inst, Path path) {
+		int instId = inst.getInstructionIndex();
+		if (instId < instrs.length) {
+			Instr i = instrs[instId];
+			if (i != null) {
+				i.executedBy.add(path);
+				if(!i.isExecuted){
+					i.isExecuted = true;
+					notExecutedInstructions.remove(new Integer(instId));
+				}
+				if(i.block != null && !i.block.isCovered){
+					i.block.isCovered = true;
+					unCoveredBlocks.remove(i.block);
+					coveredBlocks.add(i.block);
+				}
+			}
+		}
+	}
+
+	private class Block {
+		public boolean isCovered = false;
+		public int firstInst;
+		public int length;
+
+		public Block(int firstInst) {
+			this.firstInst = firstInst;
+		}
+	}
+
+	private class Instr {
+		public Instruction insn;
+		public Vector<Path> executedBy = new Vector<Path>();
+		public boolean isExecuted = false;
+		public Block block;
+
+		public Instr(Instruction instruction) {
+			insn = instruction;
+		}
+	}
+}

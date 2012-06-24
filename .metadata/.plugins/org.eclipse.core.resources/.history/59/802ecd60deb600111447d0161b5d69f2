@@ -1,0 +1,175 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.JPF;
+import gov.nasa.jpf.PropertyListenerAdapter;
+import gov.nasa.jpf.jvm.JVM;
+import gov.nasa.jpf.jvm.SystemState;
+import gov.nasa.jpf.jvm.ThreadInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+import gov.nasa.jpf.search.Search;
+
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Vector;
+
+public class StateTree  extends PropertyListenerAdapter {
+	
+	private HashMap<Integer, State> id2state = new HashMap<Integer, State> ();
+	private Config conf;
+	private JPF jpf;
+	
+	public StateTree(Config conf, JPF jpf){
+		this.conf = conf; 
+		this.jpf = jpf;
+		
+	}
+	
+	private class State {
+		
+		public int id;
+		public boolean isRoot;
+		private State parent;
+		private Vector<State> children = new Vector();
+		private Vector<Instruction> instructions = new Vector();
+		
+		public State (State parent, int id){
+			this.id = id; 
+			this.parent = parent;
+			parent.addChild(this);
+			isRoot = false;
+		}
+		
+		public State (int id){
+			this.id = id;
+			this.parent = null;
+			isRoot = true;
+		}
+		
+
+		public void addChild(State s){
+			children.add(s);
+		}
+		
+		public void addInstruction(Instruction inst){
+			instructions.add(inst);
+		}
+	}
+	
+	private State currentState;
+	private State rootState;
+	
+	private Vector<Instruction> instBuffer = new Vector<Instruction>();
+	
+	
+	
+  public void stateAdvanced(Search search) {
+		  System.out.println("State advanced, state: " + search.getStateId());
+		  if(search.isNewState()){ // the state has not yet been reached, adding coverage
+			  State s = new State(currentState, search.getStateId());
+			  currentState = s;
+			  id2state.put(new Integer(currentState.id), currentState);
+			  for(Instruction i : instBuffer){
+				  currentState.addInstruction(i);
+			  }
+			  instBuffer.clear();
+		  }
+  }
+  public void searchFinished(Search search) {
+	  System.out.println("END");
+	  printTree(rootState);
+	  printPaths(paths);
+	  for(Vector<State> path : paths){
+		  getPathCoverage(path);
+	  }
+  }
+  
+    private void getPathCoverage(Vector<State> path) {
+    	CoverageAnalyzer ca = new CoverageAnalyzer(conf, jpf);
+    	for(State s : path){
+    		for(Instruction i : s.instructions){
+    			ca.instructionExecuted(vm, i);
+    		}
+    	}
+	
+}
+	public void searchStarted(Search search) {
+		  System.out.println("search started, state: " + search.getStateId() + " end state: " + search.isEndState());
+		  currentState = new State(search.getStateId());
+		  rootState = currentState;
+		  id2state.put(new Integer(currentState.id), currentState);
+	  }
+
+	public void stateBacktracked(Search search) {
+		System.out.println("State backtracked, state: " + search.getStateId());
+		State s = id2state.get(new Integer( search.getStateId()));
+		currentState = s;		
+	}
+	
+	public void instructionExecuted(JVM vm) {
+			
+			if (!vm.getSystemState().isIgnored()) {
+				Instruction insn = vm.getLastInstruction();
+				instBuffer.add(insn);
+			}
+	}
+	
+	public void getCoverage(){
+		CoverageAnalyzer ca = new CoverageAnalyzer(conf, jpf);
+		
+	}
+	
+	public void printTree(State root){
+		printTree(root, 0, root.instructions.size());
+	}
+	
+	private Vector<State> getPath(State endState){
+		Vector<State> path = new Vector<State> ();
+		return addToPath(endState, path);
+	}
+	
+	private Vector<State> addToPath(State state, Vector<State> path){
+		if(state.isRoot)
+			return path;
+		else{
+			path.add(state);
+			return addToPath(state.parent, path);
+		}
+			
+	}
+	Vector<Vector<State>> paths = new Vector<Vector<State>> ();
+	
+	private void printPaths(Vector<Vector<State>> paths){
+		for(Vector<State>path : paths){
+			System.out.println("------------------");
+			System.out.println("Path: ");
+						
+			for(State s: path){
+				System.out.print(s.id + " -> ");
+			}
+			System.out.println(".");
+		}
+	}
+	
+	private void printTree(State root, int depth, int totalInst){
+		totalInst += root.instructions.size();
+		for (int i = 0; i<depth; i++){
+			System.out.print(" ");
+		}
+		System.out.println(" - " + root.id + ", number of instructions: " + root.instructions.size() + " total instructions: " + totalInst);
+		
+		for(State s : root.children){
+			printTree(s, depth + 1, totalInst);
+		}
+		
+		if(root.children.isEmpty()){ // keine weitere states, get coverage
+			Vector<State> path = getPath(root);
+
+			Collections.reverse(path);
+			paths.add(path);
+		}
+		
+	}
+	
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceServer.traceQuery package</title>
+</head>
+<body>
+Provides interface and classes for querying the trace database.
+
+<p>There must be a separate implementation of the trace query interface for every type of database used to store trace data.
+Since we use two database types in our system (in-memory and neo4j) there are two trace query implementations:
+{@link gov.nasa.jpf.traceServer.traceQuery.inMemory.InMemoryTraceQuery} and
+{@link gov.nasa.jpf.traceServer.traceQuery.neo4j.Neo4jTraceQuery}.  
+</p>
+
+<p>
+The result of the query methods should be in a form of {@link gov.nasa.jpf.traceServer.traceQuery.EventIterator}. 
+Trace query method is parameterized with an instance of the {@link gov.nasa.jpf.traceServer.traceQuery.TracePredicate}. 
+{@link gov.nasa.jpf.traceServer.traceQuery.TracePredicate#filter(Event)} is invoked to decide whether to include an event
+from the trace in the result of the query.
+</p>
+
+
+
+</body>
+</html>

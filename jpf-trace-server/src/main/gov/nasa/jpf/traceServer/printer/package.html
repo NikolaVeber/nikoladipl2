@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceServer.printer package</title>
+</head>
+<body>
+Provides classes for printing the trace and for printing the individual events.
+
+<p>
+Defines two printers that extend {@link gov.nasa.jpf.report.ConsolePublisher}:
+<ul> 
+	<li>{@link gov.nasa.jpf.traceServer.printer.ConsoleTracePrinter} - 
+		trace printer that mimics the default JPF console printer. One can augment the trace output
+		by adding the {@link gov.nasa.jpf.traceEmitter.PropertyCollection#TRACE_EXTRA_DATA} 
+		property to event objects. It will be printed at the end of each event output.</li>
+	<li>{@link gov.nasa.jpf.traceServer.printer.GenericConsoleTracePrinter} - 
+		Console printer parameterized with {@link gov.nasa.jpf.traceServer.printer.TracePrinter}.
+		</li>
+</ul> 
+</p>
+
+<p>
+{@link gov.nasa.jpf.traceServer.printer.EventPrinter} defines the interface for printing individual events.
+Default implementations are provided for each {@link gov.nasa.jpf.traceServer.traceStorer.EventTypes.eventGroupType}.
+<p/>
+<p>
+{@link gov.nasa.jpf.traceServer.printer.TracePrinter} prints events by using EventPrinter implementations.
+Custom printers can replace the defaults ones (see {@link gov.nasa.jpf.traceServer.extensions}).
+TracePrinter can be configured to print or not to print certain event group.
+
+In addition to using the TracePrinter in the GenericConsoleTracePrinter, the TracePrinter can also be used in the 
+analyzers (see {@link gov.nasa.jpf.traceAnalyzer.ExecTrackerAnalyzer}). 
+</p>
+
+
+
+</body>
+</html>

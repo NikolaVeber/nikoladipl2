@@ -1,0 +1,22 @@
+
+syntax: regexp
+^build/jpf-trace-server\.jar$
+syntax: regexp
+^build$
+syntax: regexp
+^\.settings$
+syntax: regexp
+^src/examples/Example\.jpf$
+syntax: regexp
+^dbTrace$
+syntax: regexp
+^bin/dbTrace$
+syntax: regexp
+^db$
+syntax: regexp
+^log/.*\.log$
+
+syntax: regexp
+^docs/javadoc/*$
+syntax: regexp
+ignore_*

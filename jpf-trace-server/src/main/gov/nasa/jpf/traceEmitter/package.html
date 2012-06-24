@@ -1,0 +1,33 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceEmitter package</title>
+</head>
+<body>
+Provides classes for listening JPF notifications and storing them by using trace storer interface.
+
+<p>During the execution of the SUT by JPF, a trace emitter stores data using the trace storer interface
+(see {@link gov.nasa.jpf.traceServer.traceStorer} package).
+This decoupling allows arbitrary emitter implementation to easily augment
+the trace information database with custom data. To simplify the creation of trace emitters,
+a base trace emitter (see {@link gov.nasa.jpf.traceEmitter.TraceEmitter}) takes care of tying events to the right JPF states 
+and initializes events with the default set of properties.
+Custom trace emitter then augments that default set of properties with data.
+</p>
+
+<p>This package contains implementation of several trace emitters: 
+<ul> 
+	<li>{@link gov.nasa.jpf.traceEmitter.DefaultTraceEmitter} - 
+		the default one, that emits events important for basic analysis of the trace</li>
+	<li>{@link gov.nasa.jpf.traceEmitter.DeadlockAnalyzerEmitter} - 
+		emits instruction/thread/object events for {@link gov.nasa.jpf.traceAnalyzer.DeadlockAnalyzer}</li>
+	<li>{@link gov.nasa.jpf.traceEmitter.MethodAnalyzerEmitter} - 
+		emits INVOKE instruction and RETURN instruction events for {@link gov.nasa.jpf.traceAnalyzer.MethodAnalyzer}</li>
+</ul>	
+</p>
+
+<p>More implementations of trace emitter can be found here: {@link gov.nasa.jpf.traceServer.extensions}.</p>
+
+</body>
+</html>

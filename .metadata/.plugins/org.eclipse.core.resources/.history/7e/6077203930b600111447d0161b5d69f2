@@ -1,0 +1,81 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.PropertyListenerAdapter;
+import gov.nasa.jpf.jvm.JVM;
+import gov.nasa.jpf.jvm.SystemState;
+import gov.nasa.jpf.jvm.ThreadInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+import gov.nasa.jpf.search.Search;
+
+import java.util.HashMap;
+import java.util.Vector;
+
+public class StateTree  extends PropertyListenerAdapter {
+	
+	private static HashMap<Integer, State> id2state = new HashMap<Integer, State> ();
+		
+	private class State {
+		
+		public int id;
+		public boolean isRoot;
+		private State parent;
+		private Vector<State> children = new Vector();
+		private Vector<Instruction> instructions = new Vector();
+		
+		public State (State parent, int id){
+			this.id = id; 
+			this.parent = parent;
+			isRoot = false;
+			StateTree.id2state.put(new Integer(id), this);
+		}
+		
+		public State (int id){
+			this.id = id;
+			this.parent = null;
+			isRoot = false;
+			StateTree.id2state.put(new Integer(id), this);
+		}
+		
+		public void addInstruction(int id, Instruction inst){
+			instructions.add(inst);
+		}
+	}
+	
+	private State lastState;
+	private State currentState;
+	private State rootState;
+	
+	private Vector<Instruction> instBuffer = new Vector<Instruction>();
+	
+	
+	
+  public void stateAdvanced(Search search) {
+		  System.out.println("State advanced, state: " + search.getStateId());
+		  if(search.isNewState()){ // the state has not yet been reached, adding coverage
+			  State s = new State(currentState, search.getStateId());
+			  lastState = currentState;
+			  currentState = s;
+		  }
+  }
+
+	  public void searchStarted(Search search) {
+		  System.out.println("search started, state: " + search.getStateId() + " end state: " + search.isEndState());
+		  currentState = new State(search.getStateId());
+		  rootState = currentState;
+	  }
+
+	public void stateBacktracked(Search search) {
+		System.out.println("State backtracked, state: " + search.getStateId());
+		
+	}
+	
+	public void instructionExecuted(JVM vm) {
+			
+			if (!vm.getSystemState().isIgnored()) {
+				Instruction insn = vm.getLastInstruction();
+				instBuffer.add(insn);
+			}
+	}
+}

@@ -1,0 +1,53 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import java.util.HashMap;
+import java.util.Vector;
+
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+
+public class MethodCov {
+	public MethodInfo mi;
+	public Instruction[] instructions;
+	public Instr[] instrs;
+	public HashMap<Integer, Instr> notExecutedInstructions = new HashMap<Integer, Instr> ();
+	
+	
+	public MethodCov(MethodInfo mi) {
+		this.mi = mi;
+		instructions = mi.getInstructions();
+		instrs = new Instr[instructions.length];
+		for(int i=0; i<instructions.length; i++){
+			instrs[i] = new Instr(instructions[i]);
+			notExecutedInstructions.put(new Integer(i), instrs[i]);
+		}
+	}
+	
+	public void instructionExecuted(Instruction inst, Path path){
+		int instId = inst.getInstructionIndex();
+		if(instId < instrs.length){
+			Instr i = instrs[instId];
+			if(i != null){
+				i.executedBy.add(path);
+				i.isExecuted = true;
+				notExecutedInstructions.remove(new Integer(instId));
+			}
+		}
+	}
+	
+	private class Block {
+		public boolean isCovered = false;
+		public int firstInst;
+		public int length;
+	}
+	
+	private class Instr {
+		public Instruction insn;
+		public Vector<Path> executedBy = new Vector<Path> ();
+		public boolean isExecuted = false;
+		
+		public Instr(Instruction instruction) {
+			insn = instruction;
+		}
+	}
+}

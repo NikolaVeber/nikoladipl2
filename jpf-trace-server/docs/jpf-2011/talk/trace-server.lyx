@@ -1,0 +1,1202 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass foils
+\begin_preamble
+\usepackage{alltt}
+\usepackage{pifont}
+\usepackage{psfrag}
+%\usepackage[pdftex]{graphicx}
+%*------------------------------------------------------------------------*%
+\newif\ifdynamic%
+%*------------------------------------------------------------------------*%
+\newif\ifpdf%
+\ifx\pdfoutput\undefined%
+ \dynamicfalse%
+\else%
+ \dynamictrue%
+\fi%
+%*------------------------------------------------------------------------*%
+%*------------------------------------------------------------------------*%
+\def\WHITE{white}
+\def\YELLOW{yellow}
+\ifdynamic
+\def\BLUE{blue}
+\def\RED{red}
+\def\GREEN{green}
+\def\MAGENTA{magenta}
+\else
+\def\BLUE{black}
+\def\RED{black}
+\def\GREEN{black}
+\def\MAGENTA{black}
+\fi
+\def\BOXBG{\YELLOW}
+\def\BOXFG{black}
+\def\TITLE{blue}
+
+\definecolor{darkgray}{gray}{.25}
+
+\def\@foilhead[#1]#2{\vfill\eject
+  \ifnew@rot@state
+    \cur@rot@statetrue\@rotdimens
+  \else
+    \cur@rot@statefalse\@defaultdimens
+  \fi
+  {\color@begingroup\normalcolor
+   \reset@font\large\bfseries\centering\color{\TITLE}{#2}\par\null\color@endgroup}%
+  \advance\foilheadskip by #1 \vspace{\foilheadskip}
+  \advance\foilheadskip by -#1}
+
+\usepackage{pstricks}
+\usepackage{rotating}
+\usepackage{multirow, multicol}
+\usepackage{hhline}
+\definecolor{darkgreen}{rgb}{0,.67,0}
+\end_preamble
+\options pdftex
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding default
+\fontencoding global
+\font_roman times
+\font_sans helvet
+\font_typewriter courier
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics pdftex
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 25
+\spacing single
+\use_hyperref false
+\papersize letterpaper
+\use_geometry true
+\use_amsmath 1
+\use_esint 0
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation landscape
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\leftmargin 1cm
+\topmargin 1.5cm
+\rightmargin 1cm
+\bottommargin 2cm
+\secnumdepth 1
+\tocdepth 1
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language polish
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\bulletLaTeX 0 "\color{darkgray}{\ding{228}}"
+\bullet 3 0 9 -1
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Standard
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+MyLogo{Cyrille Artho, 2011-11-12}
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+newcommand{
+\backslash
+cframebox}[1]{
+\backslash
+fcolorbox{
+\backslash
+BOXFG}{
+\backslash
+BOXBG}{#1}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Title
+Trace Server
+\end_layout
+
+\begin_layout Author
+Igor Andjelkovic (University of Belgrade)
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Cyrille Artho
+\begin_inset Newline newline
+\end_inset
+
+Nat.
+\begin_inset space \space{}
+\end_inset
+
+Inst.
+\begin_inset space \space{}
+\end_inset
+
+of Advanced Industrial Science and Technology (AIST),
+\begin_inset Newline newline
+\end_inset
+
+Tsukuba, Japan
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+
+\series bold
+Peter Mehlitz (NASA Ames)
+\series default
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset Newline newline
+\end_inset
+
+Darko Marinov (University of Illinois at Urbana-Champaign)
+\end_layout
+
+\begin_layout Date
+
+\size scriptsize
+\begin_inset space ~
+\end_inset
+
+
+\end_layout
+
+\begin_layout ShortFoilhead
+Dynamic Analysis of Software
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="2" columns="2">
+<features tabularvalignment="middle">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Run-time Verification
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\series bold
+Software Model Checking
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="center" valignment="top" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+
+\backslash
+[0em]
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "13col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/rv.fig
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "35col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+Analyzes few traces.
+\end_layout
+
+\begin_layout Itemize
+Complex rules.
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+May miss defects.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\backslash
+color{darkgreen}
+\end_layout
+
+\end_inset
+
+Scalable.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "13col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Plain Layout
+\begin_inset Graphics
+	filename pics/mc.fig
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\begin_inset Box Frameless
+position "c"
+hor_pos "c"
+has_inner_box 1
+inner_pos "c"
+use_parbox 0
+use_makebox 0
+width "35col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Itemize
+Many (all) traces.
+\end_layout
+
+\begin_layout Itemize
+Simple rules.
+\end_layout
+
+\begin_layout Itemize
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+{
+\backslash
+color{darkgreen}
+\end_layout
+
+\end_inset
+
+Finds all defects.
+\begin_inset ERT
+status collapsed
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\color red
+Resource hungry.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cframebox{
+\backslash
+textbf{Automated techniques to find defects in implementation.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Foilhead
+Outlook
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Box Frameless
+position "t"
+hor_pos "c"
+has_inner_box 1
+inner_pos "t"
+use_parbox 0
+use_makebox 0
+width "50col%"
+special "none"
+height "1in"
+height_special "totalheight"
+status open
+
+\begin_layout Enumerate
+Out of memory --- what now?
+\end_layout
+
+\begin_layout Enumerate
+Solution: Trace server.
+\end_layout
+
+\begin_layout Enumerate
+Convergence of technologies.
+\end_layout
+
+\begin_layout Enumerate
+Google Summer of Code.
+\end_layout
+
+\begin_layout Enumerate
+Demo.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout ShortFoilhead
+Java PathFinder (JPF)
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/what-is-JPF2.png
+	lyxscale 33
+	width 75line%
+
+\end_inset
+
+
+\begin_inset VSpace -9mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align right
+
+\size scriptsize
+Image source: Java PathFinder tutorial,
+\family typewriter
+\series bold
+\color blue
+
+\begin_inset Newline newline
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{
+\backslash
+linewidth}{.5
+\backslash
+baselineskip}{
+\end_layout
+
+\end_inset
+
+http://babelfish.arc.nasa.gov/trac/jpf/attachment/wiki/presentations/start/jpf-grap
+hics.zip
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Software model checker for Java bytecode.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Extensible, now with about 20 associated projects:
+\begin_inset Newline newline
+\end_inset
+
+
+\family typewriter
+\series bold
+\color blue
+http://babelfish.arc.nasa.gov/trac/jpf/
+\end_layout
+
+\begin_layout ShortFoilhead
+Out of Memory\SpecialChar \ldots{}
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\color red
+[SEVERE] JPF out of memory
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+============================== results
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+no errors detected
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+============================== statistics
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+elapsed time: 5:57:54
+\end_layout
+
+\begin_layout LyX-Code
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+JPF stores state space in memory for model checking.
+\end_layout
+
+\begin_layout Itemize
+More memory is needed to store the trace data.
+\end_layout
+
+\begin_layout Itemize
+Sometimes the sum of both is too much!
+\end_layout
+
+\begin_layout Foilhead
+Mitigation
+\end_layout
+
+\begin_layout Enumerate
+Run JPF by itself, storing only choices (no detailed trace).
+\end_layout
+
+\begin_layout Enumerate
+Get result.
+\end_layout
+
+\begin_layout Enumerate
+Run JPF again with stored choices just to reproduce trace.
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace vfill
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cframebox{
+\backslash
+textbf{This is complicated! Can't we do better?}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Foilhead
+Better Solution
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-server0.fig
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Trace is stored outside model checker.
+\end_layout
+
+\begin_layout Itemize
+Events are transmitted to 
+\series bold
+trace server
+\series default
+ as they are generated.
+\end_layout
+
+\begin_layout Itemize
+Trace server could be running on separate host.
+\end_layout
+
+\begin_layout Itemize
+Analysis of trace independent of JPF.
+\end_layout
+
+\begin_layout ShortFoilhead
+Trace Server Architecture
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-server.pdf
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Trace emitter is designed as a JPF listener.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Trace server hides underlying database from emitter/analyzer.
+\end_layout
+
+\begin_layout Itemize
+
+\size small
+Different analyzer algorithms may work post-mortem on trace DB.
+\end_layout
+
+\begin_layout ShortFoilhead
+Trace Emitter
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-emitter.fig
+	width 100line%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Emitter captures events from JPF listener interface.
+\end_layout
+
+\begin_layout Itemize
+Events are converted to 
+\begin_inset Quotes pld
+\end_inset
+
+Property, value
+\begin_inset Quotes prd
+\end_inset
+
+ pairs.
+\end_layout
+
+\begin_layout Itemize
+Filter can alter/eliminate/duplicate events;
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+forwards them to another filter or
+\end_layout
+
+\begin_layout Itemize
+trace server.
+\end_layout
+
+\end_deeper
+\begin_layout ShortFoilhead
+Trace Filter
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+public class OnlyNewInsnFilter extends TraceFilter {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+  public void 
+\color blue
+processInstructionExecuted
+\color inherit
+(Event ev) {
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+    String insnOpcode = (String)
+\begin_inset VSpace -2mm
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+      
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+resizebox{.9
+\backslash
+linewidth}{.45
+\backslash
+baselineskip}{
+\end_layout
+
+\end_inset
+
+
+\series bold
+\size small
+ev.getProperty(PropertyCollection.INSTRUCTION_OPCODE);
+\series default
+\size default
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout LyX-Code
+
+\size tiny
+ 
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+    if (insnOpcode.equals("new") {
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+      
+\color red
+forward
+\color inherit
+(ev, eventType.instructionExecuted);
+\end_layout
+
+\begin_layout LyX-Code
+
+\series bold
+\size small
+} } }
+\end_layout
+
+\begin_layout Itemize
+Filter overrides default action (
+\color red
+forward
+\color inherit
+) for all 
+\color blue
+instruction
+\color inherit
+ events.
+\end_layout
+
+\begin_layout Itemize
+Only NEW instructions are retained.
+\end_layout
+
+\begin_layout Itemize
+Filter may also create additional data for trace;
+\begin_inset Newline newline
+\end_inset
+
+for example: retain string data printed to console.
+\end_layout
+
+\begin_layout Foilhead
+Interface to Trace Data
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-server1.fig
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Trace Storer provides DB-independent API to store events.
+\end_layout
+
+\begin_layout Itemize
+Trace Query interface allows DB-independent querying of events:
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Iteration over event path;
+\end_layout
+
+\begin_layout Itemize
+Filtering of events via predicates.
+\end_layout
+
+\end_deeper
+\begin_layout ShortFoilhead
+Trace Database
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-db.fig
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Events stored as nodes connected by graph edges.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Nodes are property/value pairs for event data.
+\end_layout
+
+\begin_layout Itemize
+Values can be strings or primitive data (int, float).
+\end_layout
+
+\end_deeper
+\begin_layout ShortFoilhead
+Trace Analyzer
+\end_layout
+
+\begin_layout Standard
+\begin_inset VSpace bigskip
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-query.fig
+	scale 125
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Trace Analyzer can query data independently of DB format.
+\end_layout
+
+\begin_layout Itemize
+Queries by iteration or predicate.
+\end_layout
+
+\begin_layout Itemize
+Analysis of one or multiple executions.
+\end_layout
+
+\begin_layout Itemize
+Data mining of trace information.
+\end_layout
+
+\begin_layout Foilhead
+Convergence between Technologies
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset Graphics
+	filename pics/trace-server-arch.fig
+	scale 110
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Itemize
+Model Checker explores state space.
+\end_layout
+
+\begin_layout Itemize
+Properties analyzed independently of trace generation.
+\end_layout
+
+\begin_layout ShortFoilhead
+Google Summer of Code
+\end_layout
+
+\begin_layout Standard
+\align center
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+cframebox{
+\backslash
+textbf{Develop open source software with sponsorship from Google.}}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Enumerate
+Organization (NASA) applies with various candidate projects.
+\end_layout
+
+\begin_deeper
+\begin_layout Itemize
+Each project has one or more mentors attached to it.
+\end_layout
+
+\begin_layout Itemize
+Mentors can be from other organizations (such as AIST).
+\end_layout
+
+\end_deeper
+\begin_layout Enumerate
+Students apply to projects.
+\end_layout
+
+\begin_layout Enumerate
+About 10
+\begin_inset space \thinspace{}
+\end_inset
+
+% of the students/30
+\begin_inset space \thinspace{}
+\end_inset
+
+% of the projects get chosen.
+\end_layout
+
+\begin_layout Enumerate
+Students work on software over about 3 months, get USD 5,000.
+\end_layout
+
+\begin_layout Foilhead
+Demo
+\end_layout
+
+\begin_layout Standard
+To download the trace server, or for code examples, see:
+\end_layout
+
+\begin_layout Standard
+
+\family typewriter
+\series bold
+\size footnotesize
+\color blue
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+hspace{-10mm}
+\backslash
+resizebox{
+\backslash
+linewidth}{.7
+\backslash
+baselineskip}{
+\end_layout
+
+\end_inset
+
+http://babelfish.arc.nasa.gov/trac/jpf/wiki/projects/jpf-trace-server
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

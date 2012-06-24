@@ -1,0 +1,28 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceServer.traceStorer.inMemory package</title>
+</head>
+<body>
+Provides classes for storing JPF events in memory.
+<p>
+Defines {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.InMemoryTraceStorer}
+class that represents trace storer implementation.
+It uses {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.Graph} as an in-memory database implementation.
+{@link gov.nasa.jpf.traceServer.traceStorer.inMemory.Node} is the building block of the Graph.
+Each node in the graph is connected by {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.Relationship} object.
+There are several {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.RelationshipTypes types} of relationships.
+Both node and relationship can contain properties, by obeying the same rules as Event does.
+{@link gov.nasa.jpf.traceServer.traceStorer.inMemory.InMemoryEvent}s are nothing but wrapped nodes,
+following the example of the use of nodes in neo4j database.
+</p>
+<p>
+Graph can be traversed by defining the start position, the 
+{@link gov.nasa.jpf.traceServer.traceStorer.inMemory.TraversalCondition} that decides whether an event should be
+added to the result of the traversal, and {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.StopCondition}
+that defines the condition to end the traversal.   
+</p>
+
+</body>
+</html>

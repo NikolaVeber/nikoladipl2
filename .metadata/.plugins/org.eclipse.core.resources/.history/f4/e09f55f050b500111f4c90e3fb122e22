@@ -1,0 +1,54 @@
+target=TestPaths2
+
+classpath=/home/mile/sut/:/home/mile/sut/commons-math3-3.0.jar:/home/mile/sut/log4j.jar
+
+sourcepath=/home/mile/sut/
+
+# analyze TestPaths.testMe(int x, boolean b) using symbolic values for 'x' and
+# concrete value for 'b'
+symbolic.method= TestPaths2.testMe2(sym)
+
+#symbolic.dp=no_solver 
+
+#symbolic.dp=yices
+#c
+
+ listener=.symbc.sequences.SymbolicSequenceListener;
+# listener+=.listener.CoverageAnalyzer;
+
+# trace emitter class, must be provided in order to store the trace 
+# listener+=gov.nasa.jpf.traceEmitter.DefaultTraceEmitter
+# listener+=gov.nasa.jpf.traceEmitter.DeadlockAnalyzerEmitter
+
+
+vm.storage.class=nil
+
+
+
+
+
+# database location (folder), it will be created if it doesn't already exist.
+# not used when trace_storer is not persistent, like "inMemory"
+# it can be omitted, default value is "db", so database will be created in the current folder 
+traceServer.db_location = dbTrace
+
+# use local(true) or remote(false) trace server
+# default value is "true"
+traceServer.local_storer = true
+
+# trace storer type, "inMemory" or "neo4j"
+# default value is "neo4j" 
+#traceServer.trace_storer = inMemory
+
+# can be used to start recording when SUT main() method is called
+# initial instructions will be skipped
+# default value is "true"
+traceServer.skip_init = true
+
+# remote server's name, not used when trace storer is local
+# default value is "localhost" 
+traceServer.host = localhost
+
+# remote server's port number, not used when trace storer is local
+# default value is "4444"
+traceServer.port = 4444

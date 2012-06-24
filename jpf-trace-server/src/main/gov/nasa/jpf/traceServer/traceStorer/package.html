@@ -1,0 +1,38 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceServer.traceStorer package</title>
+</head>
+<body>
+Provides classes for storing JPF events.
+<p>
+Defines {@link gov.nasa.jpf.traceServer.traceStorer.Event} class that represents JPF notification.
+It's all about the event in the trace server. Event is the building block of the trace, i.e. the trace consists
+of connected events. Every event has its {@link gov.nasa.jpf.traceServer.traceStorer.EventTypes.eventType type}
+that corresponds to a notification type from JPF.
+In addition events are grouped by common properties that are generally kept for all events in the
+{@link gov.nasa.jpf.traceServer.traceStorer.EventTypes.eventGroupType group}.
+Event properties are defined as key-value pairs, where keys are {@link gov.nasa.jpf.traceServer.traceStorer.PropertyID} objects,
+and valid value types are all the Java primitives (<code>boolean, byte,
+short, int, long, float, double</code> and <code>char</code>) and <code>java.lang.String</code>s. 
+</p>
+<p>
+There are three types of trace storers:
+<ul> 
+	<li>{@link gov.nasa.jpf.traceServer.traceStorer.neo4j.Neo4jTraceStorer} - 
+		the default one, stores the trace in the persistent database. 
+		<a href="http://neo4j.org/">Neo4j<a> implementation of the graph database is used.
+		Analyzers can query the database even after JPF finishes.</li>
+	<li>{@link gov.nasa.jpf.traceServer.traceStorer.inMemory.InMemoryTraceStorer} - 
+		the trace is stored in memory, by using {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.Graph} 
+		as in memory database. That means the database must be queried on-the-fly, during the JPF run, or when JPF search finishes.</li>
+	<li>{@link gov.nasa.jpf.traceServer.traceStorer.remote.RemoteTraceStorer} - 
+		sends event objects over the wire, to a remote server. 
+		This allows both entities to use the full amount of memory on their machines.
+		On the server side, either in-memory or neo4j trace storer implementation can be used to store the trace locally.</li>
+</ul> 
+</p>
+
+</body>
+</html>

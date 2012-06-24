@@ -1,0 +1,36 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import java.util.Vector;
+
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+
+public class MethodCov {
+	public MethodInfo mi;
+	public Instruction[] instructions;
+	public Instruction[] instrs;
+	
+	
+	public MethodCov(MethodInfo mi) {
+		this.mi = mi;
+		instructions = mi.getInstructions();
+		for(int i=0; i<instructions.length; i++){
+			instrs[i] = new Instr(instructions[i]);
+		}
+	}
+	
+	public void instructionExecuted(Instruction inst){
+		int instId = inst.getInstructionIndex();
+		
+	}
+	
+	
+	private class Instr {
+		public Instruction insn;
+		public Vector<Path> executedBy = new Vector<Path> ();
+
+		public Instr(Instruction instruction) {
+			insn = instruction;
+		}
+	}
+}

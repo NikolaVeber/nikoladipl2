@@ -1,0 +1,24 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.jvm.ClassInfo;
+import gov.nasa.jpf.jvm.MethodInfo;
+
+import java.util.HashMap;
+
+public class ClassCov {
+	public ClassInfo ci;
+	
+	public ClassCov(ClassInfo ci){
+		this.ci = ci;
+		HashMap<MethodInfo, MethodCov> methods = new HashMap<MethodInfo, MethodCov>();
+        for (MethodInfo mi : ci.getDeclaredMethodInfos()) {
+          // <2do> what about MJI methods? we should report why we don't cover them
+          if (!mi.isNative() && !mi.isAbstract()) {
+            MethodCov mc = new MethodCov(mi);
+            methods.put(mi, mc);
+          }
+        }
+	}
+	
+	HashMap<MethodInfo, MethodCov> methods;
+}

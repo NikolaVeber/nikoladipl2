@@ -1,0 +1,46 @@
+# we are using oldclassic as default example
+target = oldclassic
+#target = Example
+
+# not related with trace_storer, we can store with any search algorithm
+search.class = .search.heuristic.BFSHeuristic
+
+# trace emitter
+listener=gov.nasa.jpf.traceServer.extensions.OutputEmitter
+
+# DB location (folder), it will be created if it doesn't already exist,
+# not used when trace_storer is not persistent, like "inMemory"
+traceServer.db_location = dbTrace
+# local(true) or remote(false) server
+traceServer.local_storer = true
+# trace_storer type, "inMemory" or "neo4j" 
+traceServer.trace_storer = inMemory
+# skip initial instructions 
+traceServer.skip_init = true
+# host name
+# not used when trace_storer is local 
+traceServer.host = localhost
+# port number
+# not used when trace_storer is local
+traceServer.port = 4444
+
+report.publisher=genericConsoleTracePrinter
+report.genericConsoleTracePrinter.class=gov.nasa.jpf.traceServer.printer.GenericConsoleTracePrinter
+report.genericConsoleTracePrinter.property_violation=trace
+report.genericConsoleTracePrinter.constraint=constraint,snapshot
+
+traceServer.tracePrinter.instruction.show=false
+traceServer.tracePrinter.state.show=true
+traceServer.tracePrinter.method.class=gov.nasa.jpf.traceServer.extensions.MethodPrinter
+traceServer.tracePrinter.method.show=true
+
+#report.publisher=consoleTracePrinter
+report.consoleTracePrinter.class=gov.nasa.jpf.traceServer.printer.ConsoleTracePrinter
+report.consoleTracePrinter.constraint=constraint,snapshot
+report.consoleTracePrinter.property_violation=trace
+report.consoleTracePrinter.show_steps=true
+report.consoleTracePrinter.show_method=true
+report.consoleTracePrinter.show_code=true
+report.consoleTracePrinter.show_location=true
+report.consoleTracePrinter.show_cg=true
+report.consoleTracePrinter.show_extra_data=true

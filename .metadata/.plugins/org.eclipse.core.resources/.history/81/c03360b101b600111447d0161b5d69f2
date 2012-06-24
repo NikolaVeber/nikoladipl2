@@ -1,0 +1,65 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import java.util.HashMap;
+
+import gov.nasa.jpf.symbc.sequences.CoverageAnalyzer.ClassCoverage;
+import gov.nasa.jpf.symbc.sequences.CoverageAnalyzer.Coverage;
+import gov.nasa.jpf.util.StringSetMatcher;
+
+public class PathCoverageAnalyzer {
+	  static class Coverage {
+
+		    int total;
+		    int covered;
+
+		    Coverage(int total, int covered) {
+		      this.total = total;
+		      this.covered = covered;
+		    }
+
+		    public void add(Coverage cov) {
+		      total += cov.total;
+		      covered += cov.covered;
+		    }
+
+		    public int percent() {
+		      if (total > 0) {
+		        return covered * 100 / total;
+		      }
+
+		      return (Integer.MIN_VALUE);
+		    }
+
+		    public int covered() {
+		      return covered;
+		    }
+
+		    public int total() {
+		      return total;
+		    }
+
+		    public boolean isPartiallyCovered() {
+		      return ((covered > 0) && (covered < total));
+		    }
+
+		    public boolean isNotCovered() {
+		      return (covered == 0);
+		    }
+
+		    public boolean isFullyCovered() {
+		      return (covered == total);
+		    }
+		  }
+
+	  StringSetMatcher includes = null; //  means all
+	  StringSetMatcher excludes = null; //  means none
+	  StringSetMatcher loaded;
+	  static boolean loadedOnly; // means we only check loaded classes that are not filtered
+	  static boolean showMethods;      // do we want to show per-method coverage?
+	  static boolean showMethodBodies;
+	  static boolean excludeHandlers;  // do we count the handlers in? (off-nominal CF)
+	  static boolean showBranchCoverage; // makes only sense with showMethods
+	  static boolean showRequirements; // report requirements coverage
+	  HashMap<String, ClassCoverage> classes = new HashMap<String, ClassCoverage>();
+
+}

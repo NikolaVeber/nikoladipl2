@@ -1,0 +1,23 @@
+essential
+
+Print events with certain properties.
+====================================================== stateId: 0
+====================================================== stateId: 1
+ instructionExecuted    nativereturn           java.lang.Thread       start()V               java/lang/Thread.jav   325                    75                     main                   3                      FirstTask             
+ instructionExecuted    invokevirtual          java.lang.Thread       start()V               oldclassic.java:54     346                    78                     main                   2                      SecondTask               # noArgs
+====================================================== stateId: 3
+ instructionExecuted    nativereturn           java.lang.Thread       start()V               java/lang/Thread.jav   346                    78                     main                   3                      SecondTask            
+====================================================== stateId: 8
+ instructionExecuted    invokevirtual          SecondTask             run()V                 [synthetic] [run]      346                    78                     Thread-2               2                      SecondTask               # noArgs
+ instructionExecuted    nativereturn           gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console   211                    58                     Thread-2               3                      gov.nasa.jpf.Console  
+ instructionExecuted    invokevirtual          Event                  signal_event()V        oldclassic.java:127    320                    74                     Thread-2               2                      Event                    # noArgs
+ instructionExecuted    invokevirtual          java.lang.Object       notifyAll()V           oldclassic.java:74     320                    74                     Thread-2               2                      Event                    # noArgs
+ instructionExecuted    nativereturn           java.lang.Object       notifyAll()V           java/lang/Object.jav   320                    74                     Thread-2               3                      Event                 
+ instructionExecuted    return                 Event                  signal_event()V        oldclassic.java:75     320                    74                     Thread-2               3                      Event                 
+ instructionExecuted    invokevirtual          Event                  wait_for_event()V      oldclassic.java:130    321                    74                     Thread-2               2                      Event                    # noArgs
+ instructionExecuted    invokevirtual          java.lang.Object       wait()V                oldclassic.java:79     321                    74                     Thread-2               2                      Event                    # noArgs
+====================================================== stateId: 16
+ instructionExecuted    invokevirtual          FirstTask              run()V                 [synthetic] [run]      325                    75                     Thread-1               2                      FirstTask                # noArgs
+ instructionExecuted    nativereturn           gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console   211                    58                     Thread-1               3                      gov.nasa.jpf.Console  
+ instructionExecuted    invokevirtual          Event                  wait_for_event()V      oldclassic.java:103    320                    74                     Thread-1               2                      Event                    # noArgs
+ instructionExecuted    invokevirtual          java.lang.Object       wait()V                oldclassic.java:79     320                    74                     Thread-1               2                      Event                    # noArgs

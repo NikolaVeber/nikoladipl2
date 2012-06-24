@@ -1,0 +1,633 @@
+1
+  2
+  2
+1
+
+====================================================== output #1
+  2
+1
+
+====================================================== trace #1
+------------------------------------------------------ transition #0 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"<root>" ,1/1,isCascaded:false}
+  oldclassic.java:47             : Event      new_event1 = new Event();
+    oldclassic.main([Ljava/lang/String;)V
+      new Event@140
+      dup
+      invokespecial Event.<init>()V
+  oldclassic.java:59             : class Event {
+    Event.<init>()V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+      [1 insn w/o sources]
+  oldclassic.java:60             : int count = 0;
+      aload_0
+      iconst_0
+      putfield
+      return  Event.<init>()V
+  oldclassic.java:47             : Event      new_event1 = new Event();
+    oldclassic.main([Ljava/lang/String;)V
+      astore_1
+  oldclassic.java:48             : Event      new_event2 = new Event();
+      new Event@141
+      dup
+      invokespecial Event.<init>()V
+  oldclassic.java:59             : class Event {
+    Event.<init>()V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+      [1 insn w/o sources]
+  oldclassic.java:60             : int count = 0;
+      aload_0
+      iconst_0
+      putfield
+      return  Event.<init>()V
+  oldclassic.java:48             : Event      new_event2 = new Event();
+    oldclassic.main([Ljava/lang/String;)V
+      astore_2
+  oldclassic.java:50             : FirstTask  task1 = new FirstTask(new_event1, new_event2);
+      new FirstTask@145
+      dup
+      aload_1
+      aload_2
+      invokespecial FirstTask.<init>(LEvent;LEvent;)V
+  oldclassic.java:91             : public FirstTask (Event e1, Event e2) {
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+      invokespecial java.lang.Thread.<init>()V
+    java.lang.Thread.<init>()V
+      aload_0
+      aconst_null
+      aconst_null
+      aconst_null
+      lconst_0
+      invokespecial java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokestatic java.lang.Thread.currentThread()Ljava/lang/Thread;
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      executenative JPF_java_lang_Thread.currentThread____Ljava_lang_Thread_2
+      nativereturn java.lang.Thread.currentThread()Ljava/lang/Thread;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      astore 6
+      aload_1
+      
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      aload_0
+      getfield
+      areturn java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      
+      aload_0
+      getfield
+      aload_0
+      invokevirtual java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+      dup
+      astore_2
+      monitorenter
+      aload_0
+      getfield
+      
+      aload_0
+      getfield
+      
+      aload_0
+      getfield
+      aload_0
+      getfield
+      arraylength
+      
+      aload_0
+      getfield
+      aload_0
+      getfield
+      aload_1
+      aastore
+      aload_0
+      dup
+      getfield
+      iconst_1
+      iadd
+      putfield
+      aload_0
+      dup
+      getfield
+      iconst_1
+      isub
+      putfield
+      aload_2
+      monitorexit
+      
+      return  java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_3
+      
+      aload_0
+      new java.lang.StringBuilder
+    [clinit]
+      invokestatic java.lang.AbstractStringBuilder.<clinit>()V
+    java.lang.AbstractStringBuilder.<clinit>()V
+      bipush
+      newarray int[10]
+      dup
+      iconst_0
+      bipush
+      iastore
+      dup
+      iconst_1
+      bipush
+      iastore
+      dup
+      iconst_2
+      sipush
+      iastore
+      dup
+      iconst_3
+      sipush
+      iastore
+      dup
+      iconst_4
+      ldc
+      iastore
+      dup
+      iconst_5
+      ldc
+      iastore
+      dup
+      bipush
+      ldc
+      iastore
+      dup
+      bipush
+      ldc
+      iastore
+      dup
+      bipush
+      ldc
+      iastore
+      dup
+      bipush
+      ldc
+      iastore
+      putstatic
+      return  java.lang.AbstractStringBuilder.<clinit>()V
+    [clinit]
+      directcallreturn
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      new java.lang.StringBuilder@14d
+      dup
+      invokespecial java.lang.StringBuilder.<init>()V
+    java.lang.StringBuilder.<init>()V
+      aload_0
+      bipush
+      invokespecial java.lang.AbstractStringBuilder.<init>(I)V
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+      iload_1
+      newarray char[16]
+      putfield
+      return  java.lang.AbstractStringBuilder.<init>(I)V
+    java.lang.StringBuilder.<init>()V
+      return  java.lang.StringBuilder.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      ldc
+      invokevirtual java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__Ljava_lang_String_2__Ljava_lang_StringBuilder_2
+      nativereturn java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getstatic
+      iconst_1
+      iadd
+      dup
+      putstatic
+      invokevirtual java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__I__Ljava_lang_StringBuilder_2
+      nativereturn java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.toString()Ljava/lang/String;
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      executenative JPF_java_lang_StringBuilder.toString____Ljava_lang_String_2
+      nativereturn java.lang.StringBuilder.toString()Ljava/lang/String;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      
+      aload_0
+      new java.lang.Thread$Permit@156
+      dup
+      invokespecial java.lang.Thread$Permit.<init>()V
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+      aload_0
+      iconst_1
+      putfield
+      return  java.lang.Thread$Permit.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.getPriority()I
+    java.lang.Thread.getPriority()I
+      aload_0
+      getfield
+      ireturn java.lang.Thread.getPriority()I
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.isDaemon()Z
+    java.lang.Thread.isDaemon()Z
+      aload_0
+      getfield
+      ireturn java.lang.Thread.isDaemon()Z
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload_2
+      putfield
+      aload_0
+      aload_0
+      getfield
+      aload_2
+      aload_0
+      getfield
+      lload 4
+      invokevirtual java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      executenative JPF_java_lang_Thread.init0__Ljava_lang_ThreadGroup_2Ljava_lang_Runnable_2Ljava_lang_String_2J__V
+      nativereturn java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      return  java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>()V
+      return  java.lang.Thread.<init>()V
+      [188 insn w/o sources]
+  oldclassic.java:89             : int   count = 0;  // bad optimization - local cache of event1 internals
+    FirstTask.<init>(LEvent;LEvent;)V
+      aload_0
+      iconst_0
+      putfield
+  oldclassic.java:92             : this.event1 = e1;
+      aload_0
+      aload_1
+      putfield
+  oldclassic.java:93             : this.event2 = e2;
+      aload_0
+      aload_2
+      putfield
+  oldclassic.java:94             : }
+      return  FirstTask.<init>(LEvent;LEvent;)V
+  oldclassic.java:50             : FirstTask  task1 = new FirstTask(new_event1, new_event2);
+    oldclassic.main([Ljava/lang/String;)V
+      astore_3
+  oldclassic.java:51             : SecondTask task2 = new SecondTask(new_event1, new_event2);
+      new SecondTask@15a
+      dup
+      aload_1
+      aload_2
+      invokespecial SecondTask.<init>(LEvent;LEvent;)V
+  oldclassic.java:117            : public SecondTask (Event e1, Event e2) {
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+      invokespecial java.lang.Thread.<init>()V
+    java.lang.Thread.<init>()V
+      aload_0
+      aconst_null
+      aconst_null
+      aconst_null
+      lconst_0
+      invokespecial java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokestatic java.lang.Thread.currentThread()Ljava/lang/Thread;
+    java.lang.Thread.currentThread()Ljava/lang/Thread;
+      executenative JPF_java_lang_Thread.currentThread____Ljava_lang_Thread_2
+      nativereturn java.lang.Thread.currentThread()Ljava/lang/Thread;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      astore 6
+      aload_1
+      
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+    java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+      aload_0
+      getfield
+      areturn java.lang.Thread.getThreadGroup()Ljava/lang/ThreadGroup;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      
+      aload_0
+      getfield
+      aload_0
+      invokevirtual java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+    java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+      aload_0
+      dup
+      astore_2
+      monitorenter
+      aload_0
+      getfield
+      
+      aload_0
+      getfield
+      
+      aload_0
+      getfield
+      aload_0
+      getfield
+      arraylength
+      
+      aload_0
+      getfield
+      aload_0
+      getfield
+      aload_1
+      aastore
+      aload_0
+      dup
+      getfield
+      iconst_1
+      iadd
+      putfield
+      aload_0
+      dup
+      getfield
+      iconst_1
+      isub
+      putfield
+      aload_2
+      monitorexit
+      
+      return  java.lang.ThreadGroup.add(Ljava/lang/Thread;)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      aload_3
+      
+      aload_0
+      new java.lang.StringBuilder@15b
+      dup
+      invokespecial java.lang.StringBuilder.<init>()V
+    java.lang.StringBuilder.<init>()V
+      aload_0
+      bipush
+      invokespecial java.lang.AbstractStringBuilder.<init>(I)V
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+    java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+    java.lang.AbstractStringBuilder.<init>(I)V
+      aload_0
+      iload_1
+      newarray char[16]
+      putfield
+      return  java.lang.AbstractStringBuilder.<init>(I)V
+    java.lang.StringBuilder.<init>()V
+      return  java.lang.StringBuilder.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      ldc
+      invokevirtual java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__Ljava_lang_String_2__Ljava_lang_StringBuilder_2
+      nativereturn java.lang.StringBuilder.append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      getstatic
+      iconst_1
+      iadd
+      dup
+      putstatic
+      invokevirtual java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+    java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+      executenative JPF_java_lang_StringBuilder.append__I__Ljava_lang_StringBuilder_2
+      nativereturn java.lang.StringBuilder.append(I)Ljava/lang/StringBuilder;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      invokevirtual java.lang.StringBuilder.toString()Ljava/lang/String;
+    java.lang.StringBuilder.toString()Ljava/lang/String;
+      executenative JPF_java_lang_StringBuilder.toString____Ljava_lang_String_2
+      nativereturn java.lang.StringBuilder.toString()Ljava/lang/String;
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      
+      aload_0
+      new java.lang.Thread$Permit@15f
+      dup
+      invokespecial java.lang.Thread$Permit.<init>()V
+    java.lang.Thread$Permit.<init>()V
+      aload_0
+      invokespecial java.lang.Object.<init>()V
+      return  java.lang.Object.<init>()V
+      aload_0
+      iconst_1
+      putfield
+      return  java.lang.Thread$Permit.<init>()V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.getPriority()I
+    java.lang.Thread.getPriority()I
+      aload_0
+      getfield
+      ireturn java.lang.Thread.getPriority()I
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload 6
+      invokevirtual java.lang.Thread.isDaemon()Z
+    java.lang.Thread.isDaemon()Z
+      aload_0
+      getfield
+      ireturn java.lang.Thread.isDaemon()Z
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      putfield
+      aload_0
+      aload_2
+      putfield
+      aload_0
+      aload_0
+      getfield
+      aload_2
+      aload_0
+      getfield
+      lload 4
+      invokevirtual java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      executenative JPF_java_lang_Thread.init0__Ljava_lang_ThreadGroup_2Ljava_lang_Runnable_2Ljava_lang_String_2J__V
+      nativereturn java.lang.Thread.init0(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+      return  java.lang.Thread.<init>(Ljava/lang/ThreadGroup;Ljava/lang/Runnable;Ljava/lang/String;J)V
+    java.lang.Thread.<init>()V
+      return  java.lang.Thread.<init>()V
+      [141 insn w/o sources]
+  oldclassic.java:115            : int   count = 0;  // bad optimization - local cache of event2 internals
+    SecondTask.<init>(LEvent;LEvent;)V
+      aload_0
+      iconst_0
+      putfield
+  oldclassic.java:118            : this.event1 = e1;
+      aload_0
+      aload_1
+      putfield
+  oldclassic.java:119            : this.event2 = e2;
+      aload_0
+      aload_2
+      putfield
+  oldclassic.java:120            : }
+      return  SecondTask.<init>(LEvent;LEvent;)V
+  oldclassic.java:51             : SecondTask task2 = new SecondTask(new_event1, new_event2);
+    oldclassic.main([Ljava/lang/String;)V
+      astore 4
+  oldclassic.java:53             : task1.start();
+      aload_3
+      invokevirtual FirstTask.start()V
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+------------------------------------------------------ transition #1 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"start" ,1/2,isCascaded:false}
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+      nativereturn java.lang.Thread.start()V
+      [2 insn w/o sources]
+  oldclassic.java:54             : task2.start();
+    oldclassic.main([Ljava/lang/String;)V
+      aload 4
+      invokevirtual SecondTask.start()V
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+------------------------------------------------------ transition #2 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"start" ,1/3,isCascaded:false}
+    java.lang.Thread.start()V
+      executenative JPF_java_lang_Thread.start____V
+      nativereturn java.lang.Thread.start()V
+      [2 insn w/o sources]
+  oldclassic.java:55             : }
+    oldclassic.main([Ljava/lang/String;)V
+      return  oldclassic.main([Ljava/lang/String;)V
+    [main]
+      directcallreturn
+------------------------------------------------------ transition #3 thread: 2
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"terminate" ,2/2,isCascaded:false}
+    [run]
+      runstart
+      invokevirtual SecondTask.run()V
+      [2 insn w/o sources]
+  oldclassic.java:123            : count = event2.count;          // <race> violates event2 monitor encapsulation
+    SecondTask.run()V
+      aload_0
+      aload_0
+      getfield
+      getfield
+      putfield
+  oldclassic.java:126            : System.out.println("  2");
+      getstatic
+      ldc
+      invokevirtual java.io.PrintStream.println(Ljava/lang/String;)V
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      executenative JPF_gov_nasa_jpf_ConsoleOutputStream.println__Ljava_lang_String_2__V
+      nativereturn gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      [2 insn w/o sources]
+  oldclassic.java:127            : event1.signal_event();       // updates event1.count
+    SecondTask.run()V
+      aload_0
+      getfield
+      invokevirtual Event.signal_event()V
+  oldclassic.java:71             : count = (count + 1) % 3;
+    Event.signal_event()V
+      aload_0
+      aload_0
+      getfield
+      iconst_1
+      iadd
+      iconst_3
+      irem
+      putfield
+  oldclassic.java:74             : notifyAll();
+      aload_0
+      invokevirtual java.lang.Object.notifyAll()V
+    java.lang.Object.notifyAll()V
+      executenative JPF_java_lang_Object.notifyAll____V
+      nativereturn java.lang.Object.notifyAll()V
+      [2 insn w/o sources]
+  oldclassic.java:75             : }
+    Event.signal_event()V
+      return  Event.signal_event()V
+  oldclassic.java:129            : if (count == event2.count) { // <race> ditto
+    SecondTask.run()V
+      aload_0
+      getfield
+      aload_0
+      getfield
+      getfield
+      
+  oldclassic.java:130            : event2.wait_for_event();
+      aload_0
+      getfield
+      invokevirtual Event.wait_for_event()V
+  oldclassic.java:79             : wait();
+    Event.wait_for_event()V
+      aload_0
+      invokevirtual java.lang.Object.wait()V
+    java.lang.Object.wait()V
+      executenative JPF_java_lang_Object.wait____V
+------------------------------------------------------ transition #4 thread: 1
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"wait" ,1/1,isCascaded:false}
+    [run]
+      runstart
+      invokevirtual FirstTask.run()V
+      [2 insn w/o sources]
+  oldclassic.java:97             : count = event1.count;          // <race> violates event1 monitor encapsulation
+    FirstTask.run()V
+      aload_0
+      aload_0
+      getfield
+      getfield
+      putfield
+  oldclassic.java:100            : System.out.println("1");
+      getstatic
+      ldc
+      invokevirtual java.io.PrintStream.println(Ljava/lang/String;)V
+    gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      executenative JPF_gov_nasa_jpf_ConsoleOutputStream.println__Ljava_lang_String_2__V
+      nativereturn gov.nasa.jpf.ConsoleOutputStream.println(Ljava/lang/String;)V
+      [2 insn w/o sources]
+  oldclassic.java:102            : if (count == event1.count) { // <race> ditto
+    FirstTask.run()V
+      aload_0
+      getfield
+      aload_0
+      getfield
+      getfield
+      
+  oldclassic.java:103            : event1.wait_for_event();
+      aload_0
+      getfield
+      invokevirtual Event.wait_for_event()V
+  oldclassic.java:79             : wait();
+    Event.wait_for_event()V
+      aload_0
+      invokevirtual java.lang.Object.wait()V
+    java.lang.Object.wait()V
+      executenative JPF_java_lang_Object.wait____V

@@ -1,0 +1,77 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.Config;
+import gov.nasa.jpf.PropertyListenerAdapter;
+import gov.nasa.jpf.jvm.JVM;
+import gov.nasa.jpf.jvm.SystemState;
+import gov.nasa.jpf.jvm.ThreadInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+import gov.nasa.jpf.jvm.bytecode.InvokeInstruction;
+import gov.nasa.jpf.search.Search;
+
+import java.util.HashMap;
+import java.util.Vector;
+
+public class StateTree  extends PropertyListenerAdapter {
+	
+	
+	private class State {
+		public int id;
+		public boolean isRoot;
+		private State parent;
+		private Vector<State> children = new Vector();
+		private Vector<Instruction> instructions = new Vector();
+		
+		public State (State parent, int id){
+			this.id = id; 
+			this.parent = parent;
+			isRoot = false;
+		}
+		
+		public State (int id){
+			this.id = id;
+			this.parent = null;
+			isRoot = false;
+		}
+		
+		public void addInstruction(int id, Instruction inst){
+			instructions.add(inst);
+		}
+		
+	}
+	
+	private State lastState;
+	private State currentState;
+	private State rootState;
+	
+	private HashMap<Integer, State> id2state = new HashMap<Integer, State> ();
+	
+  public void stateAdvanced(Search search) {
+		  System.out.println("State advanced, state: " + search.getStateId());
+		  }
+
+	  public void searchStarted(Search search) {
+		  System.out.println("search started, state: " + search.getStateId() + " end state: " + search.isEndState());
+		  currentState = new State(search.getStateId());
+		  rootState = currentState;
+	  }
+
+	public void stateBacktracked(Search search) {
+		System.out.println("State backtracked, state: " + search.getStateId());
+		
+	}
+	
+	public void instructionExecuted(JVM vm) {
+			
+			if (!vm.getSystemState().isIgnored()) {
+				Instruction insn = vm.getLastInstruction();
+				SystemState ss = vm.getSystemState();
+				ThreadInfo ti = vm.getLastThreadInfo();
+				Config conf  = vm.getConfig();
+	
+				if (insn instanceof InvokeInstruction && insn.isCompleted(ti)) {
+					InvokeInstruction md = (InvokeInstruction) insn;
+				}
+			}
+	}
+}

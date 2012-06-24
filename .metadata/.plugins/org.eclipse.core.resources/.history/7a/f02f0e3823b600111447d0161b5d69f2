@@ -1,0 +1,9 @@
+package gov.nasa.jpf.symbc.sequences;
+
+public class StateTree {
+	private class State {
+		public int id;
+		public boolean isRoot;
+		
+	}
+}

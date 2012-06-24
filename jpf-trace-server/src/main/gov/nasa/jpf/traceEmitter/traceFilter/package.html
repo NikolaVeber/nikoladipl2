@@ -1,0 +1,39 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceEmitter.traceFilter package</title>
+</head>
+<body>
+Provides classes for filtering events emitted by {@link gov.nasa.jpf.traceEmitter.TraceEmitter trace emitters}.
+
+<p>Enables you to use the same trace emitter and store different set of trace data (or different level of details)
+from various trace server runs.
+</p>
+
+<p>A filter is capable of forwarding events in the same way they are received. It can then act as an emitter to
+another trace filter, or a trace storer, allowing pipelining multiple trace storers.
+</p>
+
+<p>
+This makes trace analysis looks like this:<br/><br/>
+<nobr><i>JPF + emitter -> trace filter(s) -> ... -> trace filter(s)-> trace storer(s) -> DB -> query -> analyzer</i></nobr>
+<br/><br/>
+
+With this setup, events could be multiplexed to the in-memory database, 
+or the Neo4J version or even sent over the wire by using the remote storer. 
+(see {@link gov.nasa.jpf.traceEmitter.traceFilter.GeneralTailTraceFilter}).
+</p>
+
+<p>
+TraceFilter is implemented as a Chain of Responsibility design pattern, and has one major limitation:
+it is the responsibility of a trace filter to forward data. If the filter forget to forward data, the chain breaks, events are lost.
+Furthermore, a trace filter may listen to multiple events before deciding on whether to forward events or not.
+It is up to the creator of the filter to decide about this.
+</p
+
+
+<p>Custom trace filter implementations can be found here: {@link gov.nasa.jpf.traceServer.extensions.ConsolePrintFilter}.</p>
+
+</body>
+</html>

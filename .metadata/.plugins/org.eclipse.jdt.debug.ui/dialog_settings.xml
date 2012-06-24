@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item value="true" key="ShowStatusLine"/>
+		<item value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0A;&lt;History&gt;&#x0A;&lt;historyRootNode&gt;&#x0A;&lt;infoNode&gt;=jpf-core/src\/main&amp;lt;gov.nasa.jpf{JPF.java[JPF&lt;/infoNode&gt;&#x0A;&lt;infoNode&gt;=jpf-core/src\/main&amp;lt;gov.nasa.jpf.tool{RunJPF.java[RunJPF&lt;/infoNode&gt;&#x0A;&lt;/historyRootNode&gt;&#x0A;&lt;/History&gt;" key="History"/>
+		<section name="DialogBoundsSettings">
+			<item value="1281" key="DIALOG_WIDTH"/>
+			<item value="70" key="DIALOG_Y_ORIGIN"/>
+			<item value="875" key="DIALOG_HEIGHT"/>
+			<item value="-62" key="DIALOG_X_ORIGIN"/>
+			<item value="1|Ubuntu|8.0|0|GTK|1|" key="DIALOG_FONT_NAME"/>
+		</section>
+	</section>
+	<section name="conditionHistory">
+	</section>
+</section>

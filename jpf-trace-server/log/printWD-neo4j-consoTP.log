@@ -1,0 +1,88 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+
+====================================================== output #1
+  2
+1
+
+====================================================== trace #1
+------------------------------------------------------ transition #0 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"<root>" ,1/1,isCascaded:false}
+  oldclassic.java:47             : Event      new_event1 = new Event();
+  oldclassic.java:59             : class Event {
+      [1 insn w/o sources]
+  oldclassic.java:60             : int count = 0;
+  oldclassic.java:47             : Event      new_event1 = new Event();
+  oldclassic.java:48             : Event      new_event2 = new Event();
+  oldclassic.java:59             : class Event {
+      [1 insn w/o sources]
+  oldclassic.java:60             : int count = 0;
+  oldclassic.java:48             : Event      new_event2 = new Event();
+  oldclassic.java:50             : FirstTask  task1 = new FirstTask(new_event1, new_event2);
+  oldclassic.java:91             : public FirstTask (Event e1, Event e2) {
+      [188 insn w/o sources]
+  oldclassic.java:89             : int   count = 0;  // bad optimization - local cache of event1 internals
+  oldclassic.java:92             : this.event1 = e1;
+  oldclassic.java:93             : this.event2 = e2;
+  oldclassic.java:94             : }
+  oldclassic.java:50             : FirstTask  task1 = new FirstTask(new_event1, new_event2);
+  oldclassic.java:51             : SecondTask task2 = new SecondTask(new_event1, new_event2);
+  oldclassic.java:117            : public SecondTask (Event e1, Event e2) {
+      [141 insn w/o sources]
+  oldclassic.java:115            : int   count = 0;  // bad optimization - local cache of event2 internals
+  oldclassic.java:118            : this.event1 = e1;
+  oldclassic.java:119            : this.event2 = e2;
+  oldclassic.java:120            : }
+  oldclassic.java:51             : SecondTask task2 = new SecondTask(new_event1, new_event2);
+  oldclassic.java:53             : task1.start();
+      [1 insn w/o sources]
+------------------------------------------------------ transition #1 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"start" ,1/2,isCascaded:false}
+      [2 insn w/o sources]
+  oldclassic.java:54             : task2.start();
+      [1 insn w/o sources]
+------------------------------------------------------ transition #2 thread: 0
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"start" ,1/3,isCascaded:false}
+      [2 insn w/o sources]
+  oldclassic.java:55             : }
+      [1 insn w/o sources]
+------------------------------------------------------ transition #3 thread: 2
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"terminate" ,2/2,isCascaded:false}
+      [2 insn w/o sources]
+  oldclassic.java:123            : count = event2.count;          // <race> violates event2 monitor encapsulation
+  oldclassic.java:126            : System.out.println("  2");
+      [2 insn w/o sources]
+  oldclassic.java:127            : event1.signal_event();       // updates event1.count
+  oldclassic.java:71             : count = (count + 1) % 3;
+  oldclassic.java:74             : notifyAll();
+      [2 insn w/o sources]
+  oldclassic.java:75             : }
+  oldclassic.java:129            : if (count == event2.count) { // <race> ditto
+  oldclassic.java:130            : event2.wait_for_event();
+  oldclassic.java:79             : wait();
+      [1 insn w/o sources]
+------------------------------------------------------ transition #4 thread: 1
+gov.nasa.jpf.jvm.choice.ThreadChoiceFromSet {id:"wait" ,1/1,isCascaded:false}
+      [2 insn w/o sources]
+  oldclassic.java:97             : count = event1.count;          // <race> violates event1 monitor encapsulation
+  oldclassic.java:100            : System.out.println("1");
+      [2 insn w/o sources]
+  oldclassic.java:102            : if (count == event1.count) { // <race> ditto
+  oldclassic.java:103            : event1.wait_for_event();
+  oldclassic.java:79             : wait();
+      [1 insn w/o sources]
+Starting Heuristic Search 
+

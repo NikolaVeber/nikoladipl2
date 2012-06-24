@@ -1,0 +1,17 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+
+public class MethodCov {
+	public MethodInfo mi;
+	
+	public MethodCov(MethodInfo mi) {
+		this.mi = mi;
+	}
+	
+	private class Instr {
+		public Instruction insn;
+		
+	}
+}

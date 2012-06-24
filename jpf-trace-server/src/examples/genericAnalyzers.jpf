@@ -1,0 +1,17 @@
+target = oldclassic
+
+search.class = .search.heuristic.BFSHeuristic
+
+listener=gov.nasa.jpf.traceEmitter.MethodAnalyzerEmitter
+
+traceServer.db_location = dbTrace
+traceServer.local_storer = true
+traceServer.trace_storer = inMemory
+traceServer.skip_init = true
+
+report.console.property_violation = 
+report.console.finished=
+report.console.start=
+
+#traceServer.trace_analyzer=gov.nasa.jpf.traceAnalyzer.MethodAnalyzerWithGenericOutput
+#traceServer.trace_analyzer.params=dbTrace,inMemory

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="org.apache.commons.math.stat.descriptive.DescriptiveStatistics"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.Config"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.report.PublisherExtension"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.symbc.sequences.PathCoverageAnalyzer"/>
+<fullyQualifiedTypeName name="java.util.Stack"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.jvm.Transition"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Vector"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.symbc.sequences.StateTree"/>
+<fullyQualifiedTypeName name="java.util.Collections"/>
+<fullyQualifiedTypeName name="gov.nasa.jpf.jvm.bytecode.Instruction"/>
+</qualifiedTypeNameHistroy>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>gov.nasa.jpf.traceAnalyzer package</title>
+</head>
+<body>
+Provides classes for trace analysis.
+
+<p>Trace analyzers use trace queries (see {@link gov.nasa.jpf.traceServer.traceQuery.TraceQuery})
+for querying the trace database. They process those information and generate a number of reports as a result. 
+Report generation can be an integral part of the analyzer or analyzer 
+may use the services of a printer or printers from the {@link gov.nasa.jpf.traceServer.printer} package.
+Analyzer can be launched at the end of JPF search (the only solution for the in-memory trace storer, 
+see {@link gov.nasa.jpf.traceServer.traceStorer.inMemory.InMemoryTraceStorer InMemoryTraceStorer})
+or may be running as a standalone application.
+</p>
+
+<p>This package contains implementation of several trace analyzers: for analyzing sequences of method calls, 
+for looking for overlapping method calls on the same object from different threads and 
+for searching for deadlock by observing thread interaction.
+</p>
+
+<p>New analyzers that will be part of the Trace Server, will be added to this package, 
+but third party analyzers can be placed anywhere.
+</p>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+
+import java.util.Vector;
+
+public class StateTree {
+	private class State {
+		public int id;
+		public boolean isRoot;
+		private State parent;
+		private Vector<State> children = new Vector();
+		private Vector<Instruction> instructions = new Vector();
+		
+		public State (State parent, int id){
+			this.id = id; 
+			this.parent = parent;
+			isRoot = false;
+		}
+		
+		public State (int id){
+			this.id = id;
+			this.parent = null;
+			isRoot = false;
+		}
+		
+		public void addInstruction(int id, Instruction inst){
+			instructions.add(inst);
+		}
+		
+	}
+}

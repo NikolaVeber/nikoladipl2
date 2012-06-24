@@ -1,0 +1,17 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+Starting Heuristic Search 
+

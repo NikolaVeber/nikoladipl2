@@ -1,0 +1,7 @@
+   1       2     trans      insn          loc
+------- ------- ---------------------------------------------------
+W:320      |        16      invokevirtual oldclassic.java:79
+   |    W:321        8      invokevirtual oldclassic.java:79
+   |    A:320        8      invokevirtual oldclassic.java:74
+   |       S         1      invokevirtual oldclassic.java:54
+   S       |         0      invokevirtual oldclassic.java:53

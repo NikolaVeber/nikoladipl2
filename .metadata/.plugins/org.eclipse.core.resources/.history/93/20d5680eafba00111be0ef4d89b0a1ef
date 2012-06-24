@@ -1,0 +1,22 @@
+package gov.nasa.jpf.symbc.sequences;
+import java.util.HashMap;
+
+import gov.nasa.jpf.jvm.ClassInfo;
+import gov.nasa.jpf.jvm.MethodInfo;
+import gov.nasa.jpf.symbc.sequences.CoverageAnalyzer.MethodCoverage;
+
+public class CoverageManger {
+	private HashMap<ClassInfo, ClassCov> classes = new HashMap<ClassInfo, ClassCov> ();
+	
+	public void addClass(ClassInfo ci){
+		ClassCov cc = new ClassCov();
+		HashMap<MethodInfo, MethodCov> methods = new HashMap<MethodInfo, MethodCov>();
+        for (MethodInfo mi : ci.getDeclaredMethodInfos()) {
+          // <2do> what about MJI methods? we should report why we don't cover them
+          if (!mi.isNative() && !mi.isAbstract()) {
+            MethodCoverage mc = new MethodCoverage(mi);
+            methods.put(mi, mc);
+          }
+        }
+	}
+}

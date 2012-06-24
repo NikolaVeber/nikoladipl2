@@ -1,0 +1,28 @@
+# we are using oldclassic as default example
+target = oldclassic
+
+# not related with trace_storer, we can store with any search algorithm
+search.class = .search.heuristic.BFSHeuristic
+
+# trace emitter
+listener=gov.nasa.jpf.traceEmitter.MethodAnalyzerEmitter
+
+# DB location (folder), it will be created if it doesn't already exist,
+# not used when trace_storer is not persistent, like "inMemory"
+traceServer.db_location = dbTrace
+# local(true) or remote(false) server
+traceServer.local_storer = true
+# trace_storer type, "inMemory" or "neo4j" 
+traceServer.trace_storer = neo4j
+# skip initial instructions 
+traceServer.skip_init = true
+# host name
+# not used when trace_storer is local 
+traceServer.host = localhost
+# port number
+# not used when trace_storer is local
+traceServer.port = 4444
+
+#suppress console output
+report.console.finished=
+report.console.start=

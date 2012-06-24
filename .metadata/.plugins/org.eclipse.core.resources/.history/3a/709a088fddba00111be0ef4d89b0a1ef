@@ -1,0 +1,39 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import gov.nasa.jpf.jvm.bytecode.Instruction;
+
+import java.util.Vector;
+
+public class State {
+
+	
+	
+	public int id;
+	public boolean isRoot;
+	public State parent;
+	public Vector<State> children = new Vector();
+	public Vector<Instr> instructions = new Vector();
+	
+	public State (State parent, int id){
+		this.id = id; 
+		this.parent = parent;
+		parent.addChild(this);
+		isRoot = false;
+	}
+	
+	public State (int id){
+		this.id = id;
+		this.parent = null;
+		isRoot = true;
+	}
+	
+	public void addChild(State s){
+		children.add(s);
+	}
+	
+	public void addInstruction(Instr i){
+		instructions.add(i);
+	}
+	
+	
+}

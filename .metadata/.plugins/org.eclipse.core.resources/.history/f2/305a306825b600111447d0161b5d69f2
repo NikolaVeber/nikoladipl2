@@ -1,0 +1,19 @@
+package gov.nasa.jpf.symbc.sequences;
+
+import java.util.Vector;
+
+public class StateTree {
+	private class State {
+		public int id;
+		public boolean isRoot;
+		private State parent;
+		private Vector<State> children = new Vector();
+		
+		public State (State parent, int id){
+			this.id = id; 
+			this.parent = parent;
+			
+		}
+		
+	}
+}

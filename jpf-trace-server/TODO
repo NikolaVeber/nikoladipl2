@@ -1,0 +1,4 @@
+=== Task list ===
+
+* log output: Better solution for line number being -1 for native methods;
+  either location of declaration of native method, or suppress line number.

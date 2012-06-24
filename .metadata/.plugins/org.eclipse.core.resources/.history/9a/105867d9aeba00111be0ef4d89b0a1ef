@@ -1,0 +1,9 @@
+package gov.nasa.jpf.symbc.sequences;
+import java.util.HashMap;
+
+import gov.nasa.jpf.jvm.ClassInfo;
+
+public class CoverageManger {
+	private HashMap<ClassInfo, ClassCov> classes = new HashMap<ClassInfo, ClassCov> ();
+	
+}

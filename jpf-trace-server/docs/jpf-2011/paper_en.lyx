@@ -1,0 +1,2812 @@
+#LyX 2.0 created this file. For more info see http://www.lyx.org/
+\lyxformat 413
+\begin_document
+\begin_header
+\textclass IEEEtran
+\begin_preamble
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+
+% Add the compsocconf option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+\end_preamble
+\options conference,compsocconf
+\use_default_options false
+\maintain_unincluded_children false
+\language english
+\language_package default
+\inputencoding auto
+\fontencoding global
+\font_roman default
+\font_sans default
+\font_typewriter default
+\font_default_family default
+\use_non_tex_fonts false
+\font_sc false
+\font_osf false
+\font_sf_scale 100
+\font_tt_scale 100
+
+\graphics default
+\default_output_format default
+\output_sync 0
+\bibtex_command default
+\index_command default
+\paperfontsize 10
+\spacing single
+\use_hyperref false
+\papersize default
+\use_geometry false
+\use_amsmath 1
+\use_esint 1
+\use_mhchem 1
+\use_mathdots 1
+\cite_engine basic
+\use_bibtopic false
+\use_indices false
+\paperorientation portrait
+\suppress_date false
+\use_refstyle 0
+\index Index
+\shortcut idx
+\color #008000
+\end_index
+\secnumdepth 3
+\tocdepth 3
+\paragraph_separation indent
+\paragraph_indentation default
+\quotes_language english
+\papercolumns 1
+\papersides 1
+\paperpagestyle default
+\tracking_changes false
+\output_changes false
+\html_math_output 0
+\html_css_as_file 0
+\html_be_strict false
+\end_header
+
+\begin_body
+
+\begin_layout Title
+Trace Server: A Tool for Storing, Querying and Analyzing Execution Traces
+\end_layout
+
+\begin_layout Author
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockN
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Igor Andjelkovic
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockA
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+University of Belgrade
+\begin_inset Newline newline
+\end_inset
+
+ Belgrade, Serbia
+\begin_inset Newline newline
+\end_inset
+
+ igor.andjelkovic@etf.rs
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+and
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockN
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+Cyrille Artho
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+
+\backslash
+IEEEauthorblockA
+\end_layout
+
+\end_inset
+
+
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\end_layout
+
+\end_inset
+
+RCIS/AIST,
+\begin_inset Newline newline
+\end_inset
+
+ Tsukuba, Japan
+\begin_inset Newline newline
+\end_inset
+
+c.artho@aist.go.jp
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+ 
+\end_layout
+
+\begin_layout Abstract
+Various techniques for software verification are in use today, including
+ testing and software model checking.
+ Each of them has certain limitations, imposed by limited memory and computation
+ time.
+ This limits the types of properties that can be analyzed during one execution
+ on a given computer.
+\end_layout
+
+\begin_layout Abstract
+By carrying out additional analysis of program traces outside the execution
+ of the program, one can extend the scope of the analysis.
+ This paper presents the 
+\emph on
+Trace Server,
+\emph default
+ a solution for collecting, storing, querying and processing data describing
+ program execution traces.
+ The work is implemented as an extension of the Java PathFinder model checking
+ tool.
+ The collected data can be saved in a database for further processing, or
+ be processed during the operation of the system.
+ Data can also be sent to a remote server.
+\end_layout
+
+\begin_layout Abstract
+The tool defines the interface for creating data analyzers and includes
+ examples of its use, providing a deadlock analyzer and an analyzer of executed
+ methods.
+ A developer using our tool can create new reports or supplement existing
+ data.
+\end_layout
+
+\begin_layout Keywords
+Software verification; software execution traces; trace analysis.
+\end_layout
+
+\begin_layout Section
+Introduction
+\end_layout
+
+\begin_layout Standard
+Model checking can be seen as a kind of dynamic analysis, which is executed
+ against the model of the program.
+ The model of the system consists of an initial state, a set of program
+ states, and transitions between states.
+ Model checking traverses the state space in order to find reachable states
+ that violate the properties of the system
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "clarke-etal99"
+
+\end_inset
+
+.
+ The big challenge with this approach is the state space explosion problem.
+ Various techniques are used to alleviate this problem, such as system abstracti
+on or partial-order reduction.
+\end_layout
+
+\begin_layout Standard
+Java PathFinder (JPF)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "visser-et-al03"
+
+\end_inset
+
+ is a model checking tool for Java programs using an explicit representation
+ of the program state.
+ It uses the program as a model, in the form of Java bytecode instructions.
+ JPF implements a Java virtual machine that is able to execute all possible
+ paths of the program (in accordance with the described general limitations
+ of all tools).
+\end_layout
+
+\begin_layout Subsection
+Generating, storing, and analyzing execution traces
+\end_layout
+
+\begin_layout Standard
+An execution 
+\emph on
+trace
+\emph default
+ is defined as a sequence of events that represent the important moments
+ in the execution of the program (instructions executed, a thread being
+ blocked, etc.).
+ When detecting property violations, trace information can generate the
+ path that led to this state, aiding in discovering the cause of a disturbance.
+ If an exhaustive search is not feasible, incomplete trace information may
+ give clues to possible system behaviors.
+ Trace generation can be done in several ways
+\begin_inset space \space{}
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "artho-thesis"
+
+\end_inset
+
+: (1) by code instrumentation, (2) by defining wrappers or (3) by customized
+ execution environment.
+ This paper describes a way to store data by extending JPF, which can be
+ classified as (3).
+\end_layout
+
+\begin_layout Standard
+Saving execution traces in memory is a significant problem.
+ The verification of a large software can result in sequences of several
+ billion instructions.
+ If these execution traces are to be kept in memory for further analysis,
+ they compete with the memory needs for storing the search space during
+ model checking.
+ A possible solution to this problem is to preserve the results of all choices
+ (choice generators in JPF), while discarding detailed execution trace data.
+ After execution, if more detailed information are needed, it is necessary
+ to restart the analysis and execute all choices again.
+ This solution is not ideal, as it may be difficult to faithfully recreate
+ the results of system calls or interactions with external processes.
+\end_layout
+
+\begin_layout Standard
+Another problem is caused by storing trace data and analyzing it adequately.
+ It is difficult to store arbitrary data about an executed program.
+ Currently it is possible to generate a report in readable form with information
+ on traces, but the implementation of the report is specific to a particular
+ platform and cannot be easily extended.
+ Analysis of traces collected that way, after verification, requires parsing
+ the report.
+\end_layout
+
+\begin_layout Standard
+Many analyzers currently implemented in JPF (deadlock analyzer, methods
+ analyzer and others) use their own data structures to store trace data.
+ In addition to that, they must implement mechanisms to maintain execution
+ paths, due to state space exploration.
+ Much of this code is common to all analyzers and can be aggregated.
+ From the above it follows that there is a large overhead for the development
+ of an analysis algorithm.
+ Furthermore, such an analysis can be carried out only while the JPF is
+ executed, not post-mortem.
+\end_layout
+
+\begin_layout Subsection
+Architecture of our solution
+\end_layout
+
+\begin_layout Standard
+Our tool, the 
+\emph on
+Trace Server,
+\emph default
+ is implemented as an extension to Java PathFinder (JPF).
+ JPF does not support persistent trace data, but provides a flexible mechanism
+ for notifications on the internal state of the program being checked.
+ Our aim was to use that mechanism and develop a tool that manages trace
+ data, and provide an infrastructure for storage and processing.
+ Our tool can store trace events in memory or in a database, or it can forward
+ them to a remote computer.
+\end_layout
+
+\begin_layout Standard
+There is also a need for examining the collected data (by placing a query)
+ through a well-defined interface.
+ Trace processing can be conducted during or after verification.
+ The tool enables the creation of analyzers, units that analyze properties
+ of the executed program.
+ Our work includes the implementation of several analyzers.
+ The provided infrastructure enables the creation of analyzers with much
+ less code.
+ A powerful reporting system is also implemented, which allows an easy creation
+ of custom reports.
+\end_layout
+
+\begin_layout Subsection
+Paper outline
+\end_layout
+
+\begin_layout Standard
+This paper is organized as follows: Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Background"
+
+\end_inset
+
+ gives more background on model checking and JPF, and lists related work.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Architecture"
+
+\end_inset
+
+ describes the architecture of our tool, and Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Evaluation"
+
+\end_inset
+
+ gives an evaluation based on several algorithms we have implemented.
+ Section
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "sec:Conclusion"
+
+\end_inset
+
+ concludes the paper and outlines future work.
+\end_layout
+
+\begin_layout Section
+Background
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Background"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Model checking
+\end_layout
+
+\begin_layout Standard
+Model checking analyzes a representation of a system (model), to determine
+ the validity of properties of interest
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "clarke-etal99,Mansouri-Samani08programmodel"
+
+\end_inset
+
+.
+ Traditionally, model checking has been applied to descriptions of programs
+ or algorithms.
+ Recently, 
+\emph on
+software model checkers
+\emph default
+ that directly verify the program have been developed
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Artho-etal2004,ball-et-al01,cegar,corbett-et-al00,godefroid97,visser-et-al03"
+
+\end_inset
+
+.
+ This dispenses with the need of creating a special representation of the
+ program in the form of the model.
+\end_layout
+
+\begin_layout Standard
+If a property violation is found during verification, the tool should generate
+ a 
+\emph on
+counterexample
+\emph default
+ trace, which represents a sequence of execution that leads to a property
+ violation.
+ Software model checking tools provide insight into the current state of
+ the program being checked, enabling one to gather information about the
+ trace.
+\end_layout
+
+\begin_layout Subsection
+Java PathFinder (JPF)
+\end_layout
+
+\begin_layout Standard
+Java PathFinder (JPF)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "jpf,visser-et-al03"
+
+\end_inset
+
+ provides an executive environment for test and verification of Java programs.
+ It is implemented in the Java programming language, with emphasis on scalabilit
+y and configurability.
+ Many modules that can be connected to the core of JPF expand the range
+ of possible uses of this tool.
+\end_layout
+
+\begin_layout Standard
+The JPF core represents a virtual machine (VM) that interprets Java bytecode.
+ Speed is not the main feature of JPF because represents a virtual machine
+ running on top of the original Java virtual machine (JVM).
+\end_layout
+
+\begin_layout Standard
+JPF identifies non-deterministic choices in a program, and systematically
+ covers all outcomes of these choices.
+ Choice points can be scheduling-related, or assignments of a set of values
+ to a variable.
+ JPF is especially suitable for the verification of concurrent programs
+ because it allows traversing all execution paths caused by thread scheduling.
+\end_layout
+
+\begin_layout Standard
+JPF is able to detect various defects in a system.
+ By default, it checks for deadlocks and unhandled exceptions, including
+ assertion violations.
+ In addition to that, JPF provides a mechanism for defining arbitrary properties
+ to check.
+ If a property violation is found, JPF generates a counterexample.
+\end_layout
+
+\begin_layout Subsection
+Related work
+\end_layout
+
+\begin_layout Standard
+TraceContract
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "BarringerH11"
+
+\end_inset
+
+ implements an API for trace analysis in the Scala programming language.
+ Its expressive specification notation specifies trace properties to be
+ checked, in form of a hybrid between state machines and temporal logic.
+ TraceContract can be used for analyzing log files or for monitoring systems
+ executing online.
+ However, trace data cannot be collected and stored persistently.
+ Furthermore, TraceContract does not separate report generation from property
+ analysis.
+\end_layout
+
+\begin_layout Standard
+Java PathExplorer (JPaX)
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "havelundrosu04"
+
+\end_inset
+
+ is a runtime verification tool for monitoring the execution of Java programs.
+ Only one execution path is observed and trace data are collected by code
+ instrumentation.
+ A fixed set of events is written to a file or to a socket, in plain text
+ format, unlike our Trace Server which stores a configurable set of events
+ in a database.
+ Like in our tool, trace analysis algorithms are customizable.
+ JPaX contains specialized trace analysis algorithms for deadlock and data
+ race analysis.
+ These algorithms take a single (defect-free) execution trace and try to
+ conclude the presence or the absence of deadlocks and data races in other
+ potential traces of the program
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "bensalem-havelund05,havelundrosu04"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+Another concurrency analysis tool, jPredictor
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "chen-serbanuta-rosu-2008-icse"
+
+\end_inset
+
+, detects possible property violations based on a technique called sliced
+ causality.
+ The program under test is instrumented to log partial information of its
+ execution.
+ The log is then post-processed to construct a more informative trace using
+ static analysis on the original program.
+\end_layout
+
+\begin_layout Standard
+The SPIN
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Holzmann04"
+
+\end_inset
+
+, BLAST
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "HenzingerJM05"
+
+\end_inset
+
+, and MoonWalker
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "Brugh-Tacas-2009"
+
+\end_inset
+
+ model checking tools, generate data on performance only when they detect
+ a violation of characteristics of the system.
+ Unlike them, JPF Trace Server generates data on all paths executed during
+ the test, whether the error occurred or not.
+ SPIN can work as a simulator, execute only one program path and report
+ the executed code sequence.
+\end_layout
+
+\begin_layout Standard
+To our knowledge, compared to our tool, no other model checking tool has
+ implemented the option of such detailed data collection and reporting on
+ the executed program.
+\end_layout
+
+\begin_layout Section
+Architecture
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Architecture"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide true
+sideways false
+status open
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Graphics
+	filename trace-server.pdf
+	width 70text%
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Trace Server architecture.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Trace-Server-architecture"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Event and trace analysis inside JPF
+\end_layout
+
+\begin_layout Standard
+The
+\emph on
+ listener
+\emph default
+ mechanism provided by JPF allows external modules to observe and even influence
+ program execution, by interacting with JPF.
+ Listeners can be added at run time; JPF and its listeners are executed
+ on the same virtual machine.
+\end_layout
+
+\begin_layout Standard
+JPF notifies registered listeners by using the observer design pattern
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GammaETAL95DesignPatterns"
+
+\end_inset
+
+.
+ Notifications concern specific events during the search (e.
+\begin_inset space \thinspace{}
+\end_inset
+
+g., search start/end, search backtracked) and execution of JPF's virtual
+ machine (e.
+\begin_inset space \thinspace{}
+\end_inset
+
+g., a new thread is started, method or instruction executed) .
+ With each notification, complete information about the internal state of
+ JPF and program that is checked can be obtained.
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+reporting system 
+\emph default
+of JPF consists of several modules:
+\end_layout
+
+\begin_layout Itemize
+Reporter: a data collector.
+ Coordinates the work of other parts of the system of reporting.
+\end_layout
+
+\begin_layout Itemize
+Publisher: responsible for managing, formatting and printing the data collected.
+ Examples of formats are text, HTML, XML.
+\end_layout
+
+\begin_layout Itemize
+PublisherExtension: registered for each separate Publisher, for reporting
+ on certain specific topics that define the Publisher.
+\end_layout
+
+\begin_layout Standard
+The default Publisher is ConsolePublisher, which generates a human-readable
+ report in text form.
+ JPF allows the registration of any number of reporters.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Note Comment
+status open
+
+\begin_layout Plain Layout
+Using JPF on a large software systems requires much configuration.
+ Reports are often generated as unstructured text and can become very large.
+ Integrated development tools have to be adapted for use with JPF.
+ The extension jpf-shell alleviates these problems by providing a framework
+ for developing a graphical user interface and a front-end for development
+ tools for JPF.
+ This also facilitates the configuration of JPF extensions.
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Trace Server
+\end_layout
+
+\begin_layout Standard
+The architecture of the Trace Server comprises several modules, as shown
+ in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Trace-Server-architecture"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsubsection
+Trace emitter and filter
+\end_layout
+
+\begin_layout Standard
+The trace 
+\emph on
+emitter
+\emph default
+ is an implementation of the JPF Listener interface.
+ It listens to events broadcasted by JPF, creates 
+\emph on
+Event
+\emph default
+ objects that describe these events, and forwards them to a trace filter.
+ Event objects contain all the information about the event; events are encoded
+ using Java's primitive types and strings.
+ The data (event properties) in the Event object are stored as <key, value>
+ pairs, where the key is of type 
+\emph on
+PropertyID
+\emph default
+.
+ A special key type is used instead of a string to allow efficient transfer
+ of information to a remote server.
+ 
+\end_layout
+
+\begin_layout Standard
+In our system there can be only one trace emitter.
+ To listen to any number of events, it is necessary to extend the base emitter
+ by overriding the appropriate methods.
+ For every event there is a special method.
+ Certain methods cannot be overridden as they are necessary to maintain
+ the data structure containing information about the executed program.
+\end_layout
+
+\begin_layout Standard
+The trace 
+\emph on
+filter
+\emph default
+ receives events and may reject or change events.
+ The filter forwards its results to another filter, or to the trace storer.
+ This stage in the processing of events is introduced in order to allow
+ the use of existing emitters for the purpose of on-the-fly processing and
+ multiplexing.
+ The filter is capable of processing events in the order in which they are
+ received.
+ Processing may consist of testing certain properties, but a filter can
+ also change events by adding, changing or removing properties, before it
+ forwards it to the next filter.
+ Filters implement a chain of responsibility design pattern
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "GammaETAL95DesignPatterns"
+
+\end_inset
+
+.
+ If multiple filters are present, their execution order depends on the order
+ specified in a configuration file.
+ Events are removed from the filter chain by not forwarding them to the
+ next stage.
+ Events are already preprocessed into the internal format that the trace
+ server uses, so events are filtered by their value attribute, as shown
+ by an example in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:trace-filter"
+
+\end_inset
+
+.
+ A real filter should keep more events, as a meaningful analysis requires
+ richer information.
+ More code examples and information on the implementation and API can be
+ found online
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "trace-server"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+public class OnlyNewInsnFilter extends TraceFilter {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+public void processInstructionExecuted(Event ev) {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+String insnOpcode = (String)
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\size scriptsize
+ev.getProperty(PropertyCollection.INSTRUCTION_OPCODE);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+if (insnOpcode.equals("new") {
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset space ~
+\end_inset
+
+forward(ev, eventType.instructionExecuted);
+\end_layout
+
+\begin_layout Plain Layout
+
+\family typewriter
+\size footnotesize
+}
+\begin_inset space ~
+\end_inset
+
+}
+\begin_inset space ~
+\end_inset
+
+}
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+A filter that only keeps events on executions of NEW instructions.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:trace-filter"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsubsection
+Trace storage
+\end_layout
+
+\begin_layout Standard
+The central part of the system is referred to as the trace server in Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Trace-Server-architecture"
+
+\end_inset
+
+.
+ Its role is to accept events (trace storer), store them in a database and
+ provide an interface to query the stored content (trace query).
+\end_layout
+
+\begin_layout Standard
+The trace 
+\emph on
+storer
+\emph default
+ provides a database-independent interface for storage, as defined by configurat
+ion parameters.
+ The trace storer stores all the events received from the filter.
+ 
+\end_layout
+
+\begin_layout Standard
+Three types of storage are implemented: 
+\emph on
+neo4j
+\emph default
+, 
+\emph on
+inMemory
+\emph default
+ and 
+\emph on
+remote
+\emph default
+.
+ As stated earlier, the JPF search state space forms a graph, with nodes
+ representing states and edges representing transitions.
+ A relational database is not ideal to store this kind of data.
+ Therefore, we chose a specific type of database, which uses a graph structure
+ with nodes, links, and associated properties to present and preserve informatio
+n.
+\end_layout
+
+\begin_layout Standard
+These requirements led us to choose the 
+\emph on
+neo4j
+\emph default
+ database
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "neo4j"
+
+\end_inset
+
+, which stores graph data persistently.
+ This storage module realizes the initial idea of developing the Trace Server,
+ to store data outside JPF in a persistent way.
+ Unfortunately, neo4j does not perform very well in terms of computation
+ time and storage space.
+ The reason is that neo4j is designed as a transactional database.
+ This creates unnecessary overhead if nodes are never updated or deleted.
+ Furthermore, transactions have to be committed periodically to allow queries
+ to see the updated data set.
+ Empirically, we currently commit a transaction after the creation of every
+ 100,000 nodes.
+\end_layout
+
+\begin_layout Standard
+The 
+\emph on
+inMemory
+\emph default
+ storage module stores trace data temporarily, using a non-transactional
+ database.
+ It takes up less memory and runs faster than neo4j.
+ 
+\end_layout
+
+\begin_layout Standard
+Finally, the 
+\emph on
+remote
+\emph default
+ storage interface forwards events to another host.
+ On the remote side, a server receives events from the client (where JPF
+ is executing).
+ The client sends all event properties to the server, including their type
+ (PropertyID).
+ To store trace data, the server uses one of the two solutions already described
+, neo4j or inMemory.
+\end_layout
+
+\begin_layout Subsubsection
+Query interface, analysis
+\end_layout
+
+\begin_layout Standard
+The trace 
+\emph on
+query
+\emph default
+ module allows database-independent access to trace data and provides a
+ query interface that uses the search mechanisms offered by the different
+ underlying databases.
+ A search can be implemented as an iteration over events, or as a predicate.
+ A predicate is defined as a boolean function that takes an event, and decides
+ if that event should be included in the result set.
+ In a query, the predicate is evaluated on each graph node.
+\end_layout
+
+\begin_layout Standard
+The main reason for the implementation of JPF Trace Server is to create
+ a common infrastructure for analyzing trace of programs executed by JPF.
+ The trace 
+\emph on
+analyzer
+\emph default
+ should query the database, perform some analysis and report the results.
+ Multiple types of analysis can be combined.
+ The 
+\emph on
+analyze
+\emph default
+ method provides a uniform interface to execute analyses.
+ Thanks to the trace server, there is no need to parse information obtained
+ from the database.
+ For optimization, it is useful to use an appropriate trace emitter that
+ does not broadcast all the events possible, to save time and space.
+ This means that analyzers need to be compatible with the data sets stored
+ by the emitter and filters.
+ If multiple analyzers can work with the same set of data, or a set is general
+ enough, then this problem does not exist and is not necessary to restart
+ the model checking tool to collect new trace data.
+\end_layout
+
+\begin_layout Standard
+After data analysis, it is necessary to show the results in human-readable
+ form.
+ We have seen that the analyzers can define specific reports, characteristic
+ for a particular type of analysis.
+ Since it is not possible to use JPF's reporting system, as data are collected
+ in a completely different way, the need for a custom reporting mechanism
+ arises.
+ The 
+\emph on
+report
+\emph default
+ subsystem is implemented to generate general reports, which can still be
+ extended by specific information in predefined places.
+ One can print individual events, as well as the complete execution sequence.
+ 
+\end_layout
+
+\begin_layout Standard
+Reports can be displayed on the console, stored in a text file, or viewed
+ in a JPF shell panel, called trace report.
+ Results are grouped into topics that can be individually examined in the
+ same panel.
+\end_layout
+
+\begin_layout Subsection
+Example report
+\end_layout
+
+\begin_layout Standard
+Figure
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "fig:Example-report"
+
+\end_inset
+
+ shows an example report generated by an extended report, which compared
+ to the default report adds information about the location where the object
+ is initialized.
+ The specific implementation needs to process data relating to all NEW instructi
+ons to find out where every instance is created.
+ This data is gathered by an analyzer, which processes the execution trace
+ prior to printing it.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float figure
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset ERT
+status open
+
+\begin_layout Plain Layout
+
+{
+\backslash
+small
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+begin{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+...
+  
+\end_layout
+
+\begin_layout Plain Layout
+
+instructionExecuted
+\end_layout
+
+\begin_layout Plain Layout
+
+  oldclassic.java:130
+\end_layout
+
+\begin_layout Plain Layout
+
+    SecondTask.run()V
+\end_layout
+
+\begin_layout Plain Layout
+
+      invokevirtual Event.wait_for_event()V
+\end_layout
+
+\begin_layout Plain Layout
+
+objectLocked      
+\end_layout
+
+\begin_layout Plain Layout
+
+  291 # LEvent; # init at: oldclassic.java:48
+\end_layout
+
+\begin_layout Plain Layout
+
+instructionExecuted   
+\end_layout
+
+\begin_layout Plain Layout
+
+  oldclassic.java:79
+\end_layout
+
+\begin_layout Plain Layout
+
+    Event.wait_for_event()V
+\end_layout
+
+\begin_layout Plain Layout
+
+      aload_0 
+\end_layout
+
+\begin_layout Plain Layout
+
+objectUnlocked   
+\end_layout
+
+\begin_layout Plain Layout
+
+  291 # LEvent; # init at: oldclassic.java:48
+\end_layout
+
+\begin_layout Plain Layout
+
+objectWait
+\end_layout
+
+\begin_layout Plain Layout
+
+  291 # LEvent; # init at: oldclassic.java:48
+\end_layout
+
+\begin_layout Plain Layout
+
+
+\backslash
+end{verbatim}
+\end_layout
+
+\begin_layout Plain Layout
+
+}
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Example report that shows information about the location where the object
+ is initialized.
+\begin_inset CommandInset label
+LatexCommand label
+name "fig:Example-report"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Section
+Evaluation
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Evaluation"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Subsection
+Analysis algorithms
+\end_layout
+
+\begin_layout Standard
+Our current JPF Trace Server implementation includes three analyzers
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "trace-server"
+
+\end_inset
+
+:
+\end_layout
+
+\begin_layout Enumerate
+DeadlockAnalyzer: analyzes deadlocks by observing thread interactions.
+\end_layout
+
+\begin_layout Enumerate
+MethodAnalyzer: shows method calls (type of call, transition, thread).
+\end_layout
+
+\begin_layout Enumerate
+OverlappingMethodAnalyzer: specialized MethodAnalyzer that searches for
+ overlapping method calls on the same object from different threads.
+ Such overlapping calls indicate a data race.
+\end_layout
+
+\begin_layout Standard
+To evaluate our claim that the trace server provides an advantage when writing
+ analyzer algorithms, we compared how many lines of code are needed to implement
+ an analyzer with and without the Trace Server.
+ The results are shown in Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Savings-in-code"
+
+\end_inset
+
+; in two out of three cases, we managed to reduce the amount of code by
+ about half.
+ It is noteworthy that the OverlappingMethodAnalyzer extends MethodAnalyzer
+ and thus share code for storing trace data and maintaining execution paths;
+ that shared count amounts to 17 lines in the old version and 29 lines in
+ the analyzer using the trace server.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Savings in code size for different analyzers.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Savings-in-code"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="5" columns="4">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<column alignment="center" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Analyzer module
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Code size
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Ratio
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+old version
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+with Trace Server
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+old/new
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DeadlockAnalyzer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+306
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+160
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.91
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+MethodAnalyzer
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+212
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+86
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.47
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+OverlappingMethodA.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+113
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+112
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="center" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.01
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+In addition to the analyzers described, more examples are designed that
+ collect and print various types of events and features of the program during
+ execution (method calls with arguments, location where the object is created,
+ etc.).
+ These augmented reports improve the understanding of the counterexample
+ traces, and also give examples on how reports generated the trace server
+ can be augmented with specific data.
+ The distribution of the trace server contains an example where any string
+ written to the console is also logged; this augments the execution trace
+ with information that appeared on screen during program execution
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "trace-server"
+
+\end_inset
+
+.
+\end_layout
+
+\begin_layout Subsection
+Experiments
+\end_layout
+
+\begin_layout Standard
+For measuring the performance of the Trace Server, we have used the examples
+ from the JPF distribution.
+ To run all experiments, the Oracle Java Virtual Machine, version 1.6.0_21
+ is used, running on Windows XP Professional on a Pentium D820 processor
+ with 2GB of RAM available.
+ Table
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset ref
+LatexCommand ref
+reference "tab:Experimental-results"
+
+\end_inset
+
+ summarizes the results.
+\end_layout
+
+\begin_layout Standard
+\begin_inset Float table
+wide false
+sideways false
+status open
+
+\begin_layout Plain Layout
+\begin_inset Caption
+
+\begin_layout Plain Layout
+Experimental results.
+\begin_inset CommandInset label
+LatexCommand label
+name "tab:Experimental-results"
+
+\end_inset
+
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+\align center
+\begin_inset Tabular
+<lyxtabular version="3" rows="7" columns="7">
+<features tabularvalignment="middle">
+<column alignment="left" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<column alignment="right" valignment="top" width="0">
+<row>
+<cell multirow="3" alignment="left" valignment="middle" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Program
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Size
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Instr.
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="1" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Execution time [sec]
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell multicolumn="2" alignment="center" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell multirow="4" alignment="left" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+(LOC)
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+executed
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+JPF
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+inMem.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+neo4j
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+remote
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Crossing
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+121
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+50,490
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+22.6
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.5
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+DiningPhil
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+26
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+81,752
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+64.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+7.0
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+oldclassic
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+47
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+3,466
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.1
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.2
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+1.4
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+Prod./Cons.
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+53
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+120,373
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+5.5
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+9.3
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+563.4
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+11.2
+\end_layout
+
+\end_inset
+</cell>
+</row>
+<row>
+<cell alignment="left" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+TreeMap
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+32
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+183,728
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+2.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+4.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+71.0
+\end_layout
+
+\end_inset
+</cell>
+<cell alignment="right" valignment="top" topline="true" bottomline="true" leftline="true" rightline="true" usebox="none">
+\begin_inset Text
+
+\begin_layout Plain Layout
+6.9
+\end_layout
+
+\end_inset
+</cell>
+</row>
+</lyxtabular>
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Plain Layout
+
+\end_layout
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+For all programs, events about executed instructions are stored, with default
+ information, and events that are required to maintain the structure of
+ the graph in the database.
+ The inMemory solution that stores data in memory gives the best performance
+ with a slowdown of 1.05 -- 1.97 times.
+ In this case, data is not stored persistently; persistency can be achieve
+ by sending data to a remote server.
+ Sending data to a remote computer results in an overhead of 1.38 -- 3.38
+ times.
+ Neo4j requires much time to generate parts of the graph and to execute
+ transactions, making it an order of magnitude slower than other solutions
+ (a slowdown between 5.05 and 104 times).
+ If neo4j is combined with remote storage, its performance is acceptable,
+ at least in our examples, where the remote server was not saturated with
+ incoming data.
+\end_layout
+
+\begin_layout Section
+Conclusions and Future Work
+\begin_inset CommandInset label
+LatexCommand label
+name "sec:Conclusion"
+
+\end_inset
+
+
+\end_layout
+
+\begin_layout Standard
+This paper presents the Trace Server, a solution for storing, querying and
+ processing the data describing the execution of a program begin verified.
+ The work is implemented as an extension of Java PathFinder model checking
+ tool and is publicly available as a supplement to the core tool
+\begin_inset space ~
+\end_inset
+
+
+\begin_inset CommandInset citation
+LatexCommand cite
+key "trace-server"
+
+\end_inset
+
+.
+ Data can be stored in memory or in a database, or can be sent to a remote
+ server; data access is independent of the underlying storage.
+ Queries to the trace database can be made during execution or post mortem,
+ by one or multiple analysis algorithms.
+ Support for report generation facilitates the development of new types
+ of property verification.
+ Reports can be extended with arbitrary data.
+ The Trace Server is implemented as a modular system, so it is flexible
+ and extensible.
+ 
+\end_layout
+
+\begin_layout Standard
+The modular architecture of the trace server allows us to improve its components
+ one at a time, for example, to address possible scalability issues in the
+ trace storage.
+ Other possibilities for improvement exist in the analysis and reporting
+ system.
+ It is difficult to define a universal way of displaying trace data.
+ What is feasible is to show different levels of detail.
+ This could be achieved by a graphical interface.
+ Furthermore, Java is not necessarily an ideal language to implement queries
+ and reports; we are considering the use of a domain-specific language for
+ this purpose.
+ Finally, given other front ends (listeners collecting execution data on
+ environments other than JPF), the trace server could become a generic platform
+ for run-time verification, allowing verification algorithms to be written
+ for any platform that the trace server supports.
+\end_layout
+
+\begin_layout Section*
+Acknowledgments
+\end_layout
+
+\begin_layout Standard
+The authors would like to thank Peter Mehlitz for all the great comments
+ and ideas, and Darko Marinov for discussion about the tool.
+ This work was started under the Google Summer of Code (GSoC) program, during
+ summer 2010.
+\end_layout
+
+\begin_layout Standard
+\begin_inset CommandInset bibtex
+LatexCommand bibtex
+bibfiles "biblio"
+options "plain"
+
+\end_inset
+
+
+\end_layout
+
+\end_body
+\end_document

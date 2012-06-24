@@ -1,0 +1,544 @@
+Running Symbolic PathFinder ....
+symbolic.dp=choco
+symbolic.string_dp_timeout_ms=0
+symbolic.string_dp=none
+symbolic.choco_time_bound=30000
+symbolic.minint=-1000000
+symbolic.maxint=1000000
+symbolic.minreal=-10000.0
+symbolic.maxreal=10000.0
+symbolic.undefined=-1000000
+Starting the verification, JPF.java; 610
+1
+  2
+  2
+1
+Starting Heuristic Search 
+
+====================================================== gov.nasa.jpf.traceAnalyzer.GenericOutputExecTrackerAnalyzer
+====================================================== stateId: 0
+ searchStarted         
+ objectLocked           11                     Ljava/lang/Class;     
+ objectUnlocked         11                     Ljava/lang/Class;     
+ objectLocked           29                     Ljava/lang/Class;     
+ objectUnlocked         29                     Ljava/lang/Class;     
+ objectLocked           89                     Ljava/lang/Class;     
+ objectUnlocked         89                     Ljava/lang/Class;     
+ objectLocked           92                     Ljava/lang/Class;     
+ objectUnlocked         92                     Ljava/lang/Class;     
+ objectLocked           98                     Ljava/lang/Class;     
+ objectUnlocked         98                     Ljava/lang/Class;     
+ objectLocked           101                    Ljava/lang/Class;     
+ objectUnlocked         101                    Ljava/lang/Class;     
+ objectLocked           104                    Ljava/lang/Class;     
+ objectUnlocked         104                    Ljava/lang/Class;     
+ objectLocked           107                    Ljava/lang/Class;     
+ objectUnlocked         107                    Ljava/lang/Class;     
+ objectLocked           110                    Ljava/lang/Class;     
+ objectUnlocked         110                    Ljava/lang/Class;     
+ objectLocked           116                    Ljava/lang/Class;     
+ objectUnlocked         116                    Ljava/lang/Class;     
+ objectLocked           134                    Ljava/lang/Class;     
+ objectUnlocked         134                    Ljava/lang/Class;     
+ objectLocked           158                    Ljava/lang/Class;     
+ objectLocked           219                    Ljava/lang/Class;     
+ objectUnlocked         219                    Ljava/lang/Class;     
+ objectLocked           222                    Ljava/lang/Class;     
+ objectUnlocked         222                    Ljava/lang/Class;     
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           240                    Ljava/util/Propertie  
+ objectUnlocked         240                    Ljava/util/Propertie  
+ objectLocked           310                    Ljava/lang/Class;     
+ objectLocked           313                    Ljava/lang/Class;     
+ objectUnlocked         313                    Ljava/lang/Class;     
+ objectUnlocked         310                    Ljava/lang/Class;     
+ objectUnlocked         158                    Ljava/lang/Class;     
+ instructionExecuted    aload_0                Event                  <init>()V              oldclassic.java:59    
+ instructionExecuted    invokespecial java.l   Event                  <init>()V              oldclassic.java:59    
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    iconst_0               Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    putfield               Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    return  Event.<init>   Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    aload_0                Event                  <init>()V              oldclassic.java:59    
+ instructionExecuted    invokespecial java.l   Event                  <init>()V              oldclassic.java:59    
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    iconst_0               Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    putfield               Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    return  Event.<init>   Event                  <init>()V              oldclassic.java:60    
+ instructionExecuted    aload_0                FirstTask              <init>(LEvent;LEvent   oldclassic.java:91    
+ instructionExecuted    invokespecial java.l   FirstTask              <init>(LEvent;LEvent   oldclassic.java:91    
+ instructionExecuted    aload_0                java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    lconst_0               java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    invokestatic java.la   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       currentThread()Ljava   java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       currentThread()Ljava   java/lang/Thread.jav  
+ instructionExecuted    astore 6               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_1                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    areturn java.lang.Th   java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    astore_2               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ objectLocked           1                      Ljava/lang/ThreadGro  
+ instructionExecuted    monitorenter           java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    arraylength            java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_1                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aastore                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iconst_1               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iadd                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    putfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iconst_1               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    isub                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    putfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_2                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ objectUnlocked         1                      Ljava/lang/ThreadGro  
+ instructionExecuted    monitorexit            java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    return  java.lang.Th   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_3                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    new java.lang.String   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ objectLocked           326                    Ljava/lang/Class;     
+ instructionExecuted    invokestatic java.la   null                   [clinit]               [synthetic] [clinit]  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    newarray int[10]       java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_0               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_1               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_2               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    sipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_3               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    sipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_4               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iconst_5               java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    dup                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    bipush                 java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    ldc                    java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    iastore                java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    putstatic              java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ objectUnlocked         326                    Ljava/lang/Class;     
+ instructionExecuted    return  java.lang.Ab   java.lang.AbstractSt   <clinit>()V            java/lang/AbstractSt  
+ instructionExecuted    directcallreturn       null                   [clinit]               [synthetic] [clinit]  
+ instructionExecuted    new java.lang.String   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    bipush                 java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    invokespecial java.l   java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    aload_0                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    invokespecial java.l   java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    iload_1                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    newarray char[16]      java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    putfield               java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.Ab   java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.St   java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    ldc                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   append(Ljava/lang/St   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   append(Ljava/lang/St   java/lang/StringBuil  
+ instructionExecuted    getstatic              java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    iconst_1               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    iadd                   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    putstatic              java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   append(I)Ljava/lang/   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   append(I)Ljava/lang/   java/lang/StringBuil  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   toString()Ljava/lang   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   toString()Ljava/lang   java/lang/StringBuil  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    new java.lang.Thread   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    iconst_1               java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    ireturn java.lang.Th   java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    ireturn java.lang.Th   java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_2                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_2                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    lload 4                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       init0(Ljava/lang/Thr   java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       init0(Ljava/lang/Thr   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aload_0                FirstTask              <init>(LEvent;LEvent   oldclassic.java:89    
+ instructionExecuted    iconst_0               FirstTask              <init>(LEvent;LEvent   oldclassic.java:89    
+ instructionExecuted    putfield               FirstTask              <init>(LEvent;LEvent   oldclassic.java:89    
+ instructionExecuted    aload_0                FirstTask              <init>(LEvent;LEvent   oldclassic.java:92    
+ instructionExecuted    aload_1                FirstTask              <init>(LEvent;LEvent   oldclassic.java:92    
+ instructionExecuted    putfield               FirstTask              <init>(LEvent;LEvent   oldclassic.java:92    
+ instructionExecuted    aload_0                FirstTask              <init>(LEvent;LEvent   oldclassic.java:93    
+ instructionExecuted    aload_2                FirstTask              <init>(LEvent;LEvent   oldclassic.java:93    
+ instructionExecuted    putfield               FirstTask              <init>(LEvent;LEvent   oldclassic.java:93    
+ instructionExecuted    return  FirstTask.<i   FirstTask              <init>(LEvent;LEvent   oldclassic.java:94    
+ instructionExecuted    aload_0                SecondTask             <init>(LEvent;LEvent   oldclassic.java:117   
+ instructionExecuted    invokespecial java.l   SecondTask             <init>(LEvent;LEvent   oldclassic.java:117   
+ instructionExecuted    aload_0                java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aconst_null            java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    lconst_0               java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    invokestatic java.la   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       currentThread()Ljava   java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       currentThread()Ljava   java/lang/Thread.jav  
+ instructionExecuted    astore 6               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_1                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    areturn java.lang.Th   java.lang.Thread       getThreadGroup()Ljav   java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    astore_2               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ objectLocked           1                      Ljava/lang/ThreadGro  
+ instructionExecuted    monitorenter           java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    arraylength            java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_1                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aastore                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iconst_1               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iadd                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    putfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_0                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    dup                    java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    getfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    iconst_1               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    isub                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    putfield               java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_2                java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ objectUnlocked         1                      Ljava/lang/ThreadGro  
+ instructionExecuted    monitorexit            java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted                   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    return  java.lang.Th   java.lang.ThreadGrou   add(Ljava/lang/Threa   java/lang/ThreadGrou  
+ instructionExecuted    aload_3                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    new java.lang.String   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    bipush                 java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    invokespecial java.l   java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    aload_0                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    invokespecial java.l   java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    iload_1                java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    newarray char[16]      java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    putfield               java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.Ab   java.lang.AbstractSt   <init>(I)V             java/lang/AbstractSt  
+ instructionExecuted    return  java.lang.St   java.lang.StringBuil   <init>()V              java/lang/StringBuil  
+ instructionExecuted    ldc                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   append(Ljava/lang/St   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   append(Ljava/lang/St   java/lang/StringBuil  
+ instructionExecuted    getstatic              java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    iconst_1               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    iadd                   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    putstatic              java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   append(I)Ljava/lang/   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   append(I)Ljava/lang/   java/lang/StringBuil  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.StringBuil   toString()Ljava/lang   java/lang/StringBuil  
+ instructionExecuted    nativereturn java.la   java.lang.StringBuil   toString()Ljava/lang   java/lang/StringBuil  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    new java.lang.Thread   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    dup                    java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    invokespecial java.l   java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Ob   java.lang.Object       <init>()V              java/lang/Object.jav  
+ instructionExecuted    aload_0                java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    iconst_1               java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread$Per   <init>()V              java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    ireturn java.lang.Th   java.lang.Thread       getPriority()I         java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload 6                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    ireturn java.lang.Th   java.lang.Thread       isDaemon()Z            java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_2                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    putfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_2                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    aload_0                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    getfield               java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    lload 4                java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    invokevirtual java.l   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       init0(Ljava/lang/Thr   java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       init0(Ljava/lang/Thr   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread       <init>(Ljava/lang/Th   java/lang/Thread.jav  
+ instructionExecuted    return  java.lang.Th   java.lang.Thread       <init>()V              java/lang/Thread.jav  
+ instructionExecuted    aload_0                SecondTask             <init>(LEvent;LEvent   oldclassic.java:115   
+ instructionExecuted    iconst_0               SecondTask             <init>(LEvent;LEvent   oldclassic.java:115   
+ instructionExecuted    putfield               SecondTask             <init>(LEvent;LEvent   oldclassic.java:115   
+ instructionExecuted    aload_0                SecondTask             <init>(LEvent;LEvent   oldclassic.java:118   
+ instructionExecuted    aload_1                SecondTask             <init>(LEvent;LEvent   oldclassic.java:118   
+ instructionExecuted    putfield               SecondTask             <init>(LEvent;LEvent   oldclassic.java:118   
+ instructionExecuted    aload_0                SecondTask             <init>(LEvent;LEvent   oldclassic.java:119   
+ instructionExecuted    aload_2                SecondTask             <init>(LEvent;LEvent   oldclassic.java:119   
+ instructionExecuted    putfield               SecondTask             <init>(LEvent;LEvent   oldclassic.java:119   
+ instructionExecuted    return  SecondTask.<   SecondTask             <init>(LEvent;LEvent   oldclassic.java:120   
+ threadStarted          1                      Thread-1              
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       start()V               java/lang/Thread.jav  
+ stateBacktracked      
+ stateRestored         
+====================================================== stateId: 1
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       start()V               java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       start()V               java/lang/Thread.jav  
+ threadStarted          2                      Thread-2              
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       start()V               java/lang/Thread.jav  
+ stateBacktracked      
+ stateRestored         
+====================================================== stateId: 3
+ instructionExecuted    executenative JPF_ja   java.lang.Thread       start()V               java/lang/Thread.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Thread       start()V               java/lang/Thread.jav  
+ objectLocked           0                      Ljava/lang/Thread;    
+ objectNotifyAll        0                      Ljava/lang/Thread;    
+ objectUnlocked         0                      Ljava/lang/Thread;    
+ threadTerminated       0                      main                  
+ instructionExecuted    directcallreturn       null                   [main]                 [synthetic] [main]    
+ stateBacktracked      
+ stateRestored         
+====================================================== stateId: 9
+ instructionExecuted    runstart               null                   [run]                  [synthetic] [run]     
+ instructionExecuted    invokevirtual Second   null                   [run]                  [synthetic] [run]     
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:123   
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:123   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:123   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:123   
+ instructionExecuted    putfield               SecondTask             run()V                 oldclassic.java:123   
+ instructionExecuted    getstatic              SecondTask             run()V                 oldclassic.java:126   
+ instructionExecuted    ldc                    SecondTask             run()V                 oldclassic.java:126   
+ instructionExecuted    invokevirtual java.i   SecondTask             run()V                 oldclassic.java:126   
+ instructionExecuted    executenative JPF_go   gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console  
+ instructionExecuted    nativereturn gov.nas   gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console  
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:127   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:127   
+ objectLocked           320                    LEvent;               
+ instructionExecuted    invokevirtual Event.   SecondTask             run()V                 oldclassic.java:127   
+ instructionExecuted    aload_0                Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    aload_0                Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    getfield               Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    iconst_1               Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    iadd                   Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    iconst_3               Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    irem                   Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    putfield               Event                  signal_event()V        oldclassic.java:71    
+ instructionExecuted    aload_0                Event                  signal_event()V        oldclassic.java:74    
+ instructionExecuted    invokevirtual java.l   Event                  signal_event()V        oldclassic.java:74    
+ objectNotifyAll        320                    LEvent;               
+ instructionExecuted    executenative JPF_ja   java.lang.Object       notifyAll()V           java/lang/Object.jav  
+ instructionExecuted    nativereturn java.la   java.lang.Object       notifyAll()V           java/lang/Object.jav  
+ objectUnlocked         320                    LEvent;               
+ instructionExecuted    return  Event.signal   Event                  signal_event()V        oldclassic.java:75    
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted               SecondTask             run()V                 oldclassic.java:129   
+ instructionExecuted    aload_0                SecondTask             run()V                 oldclassic.java:130   
+ instructionExecuted    getfield               SecondTask             run()V                 oldclassic.java:130   
+ objectLocked           321                    LEvent;               
+ instructionExecuted    invokevirtual Event.   SecondTask             run()V                 oldclassic.java:130   
+ instructionExecuted    aload_0                Event                  wait_for_event()V      oldclassic.java:79    
+ instructionExecuted    invokevirtual java.l   Event                  wait_for_event()V      oldclassic.java:79    
+ objectUnlocked         321                    LEvent;               
+ objectWait             321                    LEvent;               
+ instructionExecuted    executenative JPF_ja   java.lang.Object       wait()V                java/lang/Object.jav  
+ stateBacktracked      
+====================================================== stateId: 22
+ instructionExecuted    runstart               null                   [run]                  [synthetic] [run]     
+ instructionExecuted    invokevirtual FirstT   null                   [run]                  [synthetic] [run]     
+ instructionExecuted    aload_0                FirstTask              run()V                 oldclassic.java:97    
+ instructionExecuted    aload_0                FirstTask              run()V                 oldclassic.java:97    
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:97    
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:97    
+ instructionExecuted    putfield               FirstTask              run()V                 oldclassic.java:97    
+ instructionExecuted    getstatic              FirstTask              run()V                 oldclassic.java:100   
+ instructionExecuted    ldc                    FirstTask              run()V                 oldclassic.java:100   
+ instructionExecuted    invokevirtual java.i   FirstTask              run()V                 oldclassic.java:100   
+ instructionExecuted    executenative JPF_go   gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console  
+ instructionExecuted    nativereturn gov.nas   gov.nasa.jpf.Console   println(Ljava/lang/S   gov/nasa/jpf/Console  
+ instructionExecuted    aload_0                FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted    aload_0                FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted               FirstTask              run()V                 oldclassic.java:102   
+ instructionExecuted    aload_0                FirstTask              run()V                 oldclassic.java:103   
+ instructionExecuted    getfield               FirstTask              run()V                 oldclassic.java:103   
+ objectLocked           320                    LEvent;               
+ instructionExecuted    invokevirtual Event.   FirstTask              run()V                 oldclassic.java:103   
+ instructionExecuted    aload_0                Event                  wait_for_event()V      oldclassic.java:79    
+ instructionExecuted    invokevirtual java.l   Event                  wait_for_event()V      oldclassic.java:79    
+ objectUnlocked         320                    LEvent;               
+ objectWait             320                    LEvent;               
+ instructionExecuted    executenative JPF_ja   java.lang.Object       wait()V                java/lang/Object.jav  
+ propertyViolated      
+ searchFinished        

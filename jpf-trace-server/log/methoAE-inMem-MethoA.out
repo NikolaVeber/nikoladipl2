@@ -1,0 +1,50 @@
+1
+  2
+  2
+1
+
+====================================================== error #1
+gov.nasa.jpf.jvm.NotDeadlockedProperty
+deadlock encountered:
+  thread id=1,name=Thread-1,status=WAITING,priority=5,lockCount=1,suspendCount=0
+  thread id=2,name=Thread-2,status=WAITING,priority=5,lockCount=1,suspendCount=0
+
+
+====================================================== snapshot #1
+thread id=1,name=Thread-1,status=WAITING,priority=5,lockCount=1,suspendCount=0
+  waiting on: Event@140
+  call stack:
+	at java.lang.Object.wait(Object.java:-1)
+	at Event.wait_for_event(oldclassic.java:79)
+	at FirstTask.run(oldclassic.java:103)
+
+thread id=2,name=Thread-2,status=WAITING,priority=5,lockCount=1,suspendCount=0
+  waiting on: Event@141
+  call stack:
+	at java.lang.Object.wait(Object.java:-1)
+	at Event.wait_for_event(oldclassic.java:79)
+	at SecondTask.run(oldclassic.java:130)
+
+====================================================== gov.nasa.jpf.traceAnalyzer.MethodAnalyzer
+------------------------------------------ #1
+0: RETURN ... java.lang.Thread<FirstTask@325>.start()V
+0: CALL_EXECUTE ... java.lang.Thread<SecondTask@346>.start()V
+------------------------------------------ #2
+0: RETURN ... java.lang.Thread<SecondTask@346>.start()V
+0: RETURN .. oldclassic.main([Ljava/lang/String;)V
+------------------------------------------ #3
+2: CALL_EXECUTE .. SecondTask@346.run()V
+2: CALL_EXECUTE ... gov.nasa.jpf.ConsoleOutputStream@211.println(Ljava/lang/String;)V
+2: RETURN ... gov.nasa.jpf.ConsoleOutputStream@211.println(Ljava/lang/String;)V
+2: CALL_EXECUTE ... Event@320.signal_event()V
+2: CALL_EXECUTE .... java.lang.Object<Event@320>.notifyAll()V
+2: RETURN .... java.lang.Object<Event@320>.notifyAll()V
+2: RETURN ... Event@320.signal_event()V
+2: CALL_EXECUTE ... Event@321.wait_for_event()V
+2: CALL_EXECUTE .... java.lang.Object<Event@321>.wait()V
+------------------------------------------ #4
+1: CALL_EXECUTE .. FirstTask@325.run()V
+1: CALL_EXECUTE ... gov.nasa.jpf.ConsoleOutputStream@211.println(Ljava/lang/String;)V
+1: RETURN ... gov.nasa.jpf.ConsoleOutputStream@211.println(Ljava/lang/String;)V
+1: CALL_EXECUTE ... Event@320.wait_for_event()V
+1: CALL_EXECUTE .... java.lang.Object<Event@320>.wait()V
